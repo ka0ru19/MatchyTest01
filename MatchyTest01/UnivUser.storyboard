@@ -217,6 +217,9 @@
                     </view>
                     <navigationItem key="navigationItem" title="質問" id="wBm-b3-jbH"/>
                     <connections>
+                        <outlet property="answerInputButton" destination="v1h-Vp-ntC" id="qm8-vQ-Sq2"/>
+                        <outlet property="answerRefuseButton" destination="l06-98-XGV" id="cJG-sx-0dC"/>
+                        <outlet property="questionScrollView" destination="hAA-HV-mth" id="l4C-Ky-TSR"/>
                         <outlet property="questionTextView" destination="NmV-GN-fcY" id="MPk-KS-u5F"/>
                         <outlet property="questionerIconImageView" destination="e0K-rX-HG5" id="7GE-bf-gcZ"/>
                         <outlet property="questionerNameLabel" destination="mOx-bU-W5L" id="iAf-6J-Y3e"/>
@@ -453,6 +456,8 @@
                     </view>
                     <navigationItem key="navigationItem" title="回答" id="UEm-yR-80W"/>
                     <connections>
+                        <outlet property="answerInputScrollView" destination="HCV-K6-icU" id="hAf-AC-TAv"/>
+                        <outlet property="answerInputTextView" destination="6zD-YQ-lnX" id="2xU-NE-1mr"/>
                         <outlet property="questionTextView" destination="gGA-WZ-LYE" id="OJX-Ms-Ver"/>
                         <outlet property="questionerIconImageView" destination="UQm-IF-o41" id="RuW-jy-Tku"/>
                         <outlet property="questionerNameLabel" destination="LkB-y1-P2V" id="PQq-bI-eas"/>
