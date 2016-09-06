@@ -32,6 +32,8 @@ class QuestionViewController: UIViewController {
     
     @IBOutlet weak var questionTableView: UITableView!
     
+    var questionList = [QuestionModel]()
+    
     var selectedIndex: Int!
     
     override func viewDidLoad() {
@@ -40,38 +42,58 @@ class QuestionViewController: UIViewController {
         // Do any additional setup after loading the view.
         questionTableView.delegate = self
         questionTableView.dataSource = self
+        
+        loadFirstQuestionList()
+        
     }
     
+    override func viewWillAppear(animated: Bool) {
+        questionTableView.reloadData()
+    }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
     
-    
-    /*
-     // MARK: - Navigation
-     
-     // In a storyboard-based application, you will often want to do a little preparation before navigation
-     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-     // Get the new view controller using segue.destinationViewController.
-     // Pass the selected object to the new view controller.
-     }
-     */
+    func loadFirstQuestionList() {
+        questionList = []
+        for i in 0 ..< postArray.count {
+            let question = QuestionModel()
+            question.questionerName = personImageNameArray[i]
+            question.questionerIconNSData =
+                UIImageJPEGRepresentation(UIImage(named: personImageNameArray[i])!, 0.3)
+            question.questionerIconName = personImageNameArray[i]
+            question.questionText = postArray[i]
+            question.isQuestionAnswerd = false
+            question.answerDeadlineText = "2016-09-08 17:39"
+            question.answerReward = String(123 * i)
+            questionList.append(question)
+        }
+    }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "toQuestionDetailVC" {
             let nextVC = segue.destinationViewController as! QuestionDetailViewController
-            nextVC.selectedPersonImageName = personImageNameArray[selectedIndex]
-            nextVC.selectedDetailText = postArray[selectedIndex]
+            // 任意のquestionをtableviewから削除するのに使う
+            nextVC.removeIndexDelegate = self
+            nextVC.selectedIndex = self.selectedIndex
+            nextVC.selectedQuestion = questionList[self.selectedIndex]
         }
     }
     
 }
 
+// 任意のquestionをtableviewから削除するのに使う
+extension QuestionViewController: onTappedAnswerRefuseOK {
+    func removeQuestion(index: Int) {
+        questionList.removeAtIndex(index)
+    }
+}
+
 extension QuestionViewController: UITableViewDelegate, UITableViewDataSource {
     // セルの個数を指定するデリゲートメソッド（必須）
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return postArray.count
+        return questionList.count
     }
     
     // セルに値を設定するデータソースメソッド（必須）
@@ -79,10 +101,11 @@ extension QuestionViewController: UITableViewDelegate, UITableViewDataSource {
         // セルを取得
         let cell = tableView.dequeueReusableCellWithIdentifier("QuestionPostCell") as! QuestionPostTableViewCell
         
+        print(indexPath.row)
+        print(questionList[indexPath.row].questionerName)
+        
         // セルに値を設定
-        cell.setCell(nameText: personImageNameArray[indexPath.row],
-                     detailText: postArray[indexPath.row],
-                     iconImageNameText: personImageNameArray[indexPath.row])
+        cell.setCell(questionList[indexPath.row])
         
         return cell
     }

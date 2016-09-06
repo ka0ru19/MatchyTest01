@@ -10,21 +10,25 @@ import UIKit
 
 class UnivMyPageViewController: UIViewController {
     
-    @IBOutlet weak var selfNameLabel: UILabel!
-    @IBOutlet weak var selfIconImageView: UIImageView!
-    @IBOutlet weak var selfFollowerLabel: UILabel!
-    @IBOutlet weak var selfIntroductionTextView: UITextView!
+    @IBOutlet weak var myNameLabel: UILabel!
+    @IBOutlet weak var myIconImageView: UIImageView!
+    @IBOutlet weak var myFollowerLabel: UILabel!
+    @IBOutlet weak var myIntroductionTextView: UITextView!
     
     @IBOutlet weak var followerTableView: UITableView!
     
-    let selfImageName = "inocci.png"
-    let personImageNameArray = ["aguri.jpg",
+    let myImageNameSample = "inocci.png"
+    let personImageNameSampleArray = ["aguri.jpg",
                                 "daifuku1.jpg",
                                 "honami1.jpg",
                                 "horse01.png",
                                 "kobaton.jpg",
                                 "monkey01.png",
                                 "saki1.jpg"]
+    
+    var myImageName = ""
+    var followerImageNameArray = [String]()
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,11 +36,35 @@ class UnivMyPageViewController: UIViewController {
         followerTableView.delegate = self
         followerTableView.dataSource = self
     }
+    
+    override func viewWillAppear(animated: Bool) {
+        // 自分の情報を読み込み、配置
+        setUpMyInfomation()
+        
+        // 自分のfollowerを読み込み、配置(tableViewのreload)
+        setUpMyFollower()
+    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    func setUpMyInfomation() {
+        myImageName = myImageNameSample
+        myNameLabel.text = myImageName
+        myIconImageView.image = UIImage(named: myImageName)
+        myIntroductionTextView.text = "私(Univ)の名前は\(myImageName)です"
+    }
+    
+    func setUpMyFollower() {
+        followerImageNameArray = []
+        for imageName in personImageNameSampleArray {
+            followerImageNameArray.append(imageName)
+        }
+        followerTableView.reloadData()
+    }
+    
     
 
     /*
@@ -55,7 +83,7 @@ extension UnivMyPageViewController: UITableViewDelegate, UITableViewDataSource {
     
     // セルの個数を指定するデリゲートメソッド（必須）
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return personImageNameArray.count
+        return followerImageNameArray.count
     }
     
     // セルに値を設定するデータソースメソッド（必須）
@@ -64,9 +92,9 @@ extension UnivMyPageViewController: UITableViewDelegate, UITableViewDataSource {
         let cell = tableView.dequeueReusableCellWithIdentifier("FollowerCell") as! UnivFollowerTableViewCell
         
         // セルに値を設定
-        cell.setCell(imageName: personImageNameArray[indexPath.row],
-                     nameText: personImageNameArray[indexPath.row],
-                     introductionText: personImageNameArray[indexPath.row])
+        cell.setCell(imageName: followerImageNameArray[indexPath.row],
+                     nameText: followerImageNameArray[indexPath.row],
+                     introductionText: followerImageNameArray[indexPath.row])
         
         return cell
     }

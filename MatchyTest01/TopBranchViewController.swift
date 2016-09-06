@@ -10,6 +10,8 @@ import UIKit
 
 class TopBranchViewController: UIViewController {
 
+    var window: UIWindow? // StoryboardHelperで使う
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -22,7 +24,7 @@ class TopBranchViewController: UIViewController {
 
     @IBAction func onTappedUniv(sender: UIButton) {
         // 画面遷移
-        let storyboard: UIStoryboard =  UIStoryboard(name: "UnivUser",bundle:nil)
+        let storyboard: UIStoryboard =  UIStoryboard(name: "UnivUser-Main",bundle:nil)
         var nextVC: UITabBarController //UIViewController!
         nextVC = storyboard.instantiateViewControllerWithIdentifier("UnivStoryBoardTop") as! UITabBarController
         self.presentViewController(nextVC, animated: true, completion: nil)
