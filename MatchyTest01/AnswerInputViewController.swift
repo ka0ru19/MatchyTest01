@@ -20,7 +20,7 @@ class AnswerInputViewController: UIViewController {
     @IBOutlet weak var separateYourAnswerLabel: UILabel!
     @IBOutlet weak var answerInputTextView: UITextView!
     
-    var selectedQuestion = QuestionModel()
+    var selectedQuestion = QuestionForUnivModel()
     var selectedIndex: Int!
     
     let margin: CGFloat = 8.0 // パーツ間の余白

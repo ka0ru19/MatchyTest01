@@ -42,7 +42,7 @@ class QuestionPostTableViewCell: UITableViewCell {
         // Configure the view for the selected state
     }
     
-    func setCell(question: QuestionModel) {
+    func setCell(question: QuestionForUnivModel) {
         let questionTextWithoutNewParagraph =
             question.questionText.stringByReplacingOccurrencesOfString("\n", withString: " ")
         nameLabel.text = question.questionerName

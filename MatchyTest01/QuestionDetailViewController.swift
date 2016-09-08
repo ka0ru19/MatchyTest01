@@ -26,7 +26,7 @@ class QuestionDetailViewController: UIViewController {
     @IBOutlet weak var answerRefuseButton: UIButton!
     @IBOutlet weak var answerInputButton: UIButton!
     
-    var selectedQuestion = QuestionModel()
+    var selectedQuestion = QuestionForUnivModel()
     var selectedIndex: Int!
     
     let margin: CGFloat = 8.0 // パーツ間の余白

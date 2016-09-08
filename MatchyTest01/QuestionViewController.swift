@@ -12,11 +12,11 @@ class QuestionViewController: UIViewController {
     
     @IBOutlet weak var questionTableView: UITableView!
     
-    var questionList = [QuestionModel]()
+    var questionList = [QuestionForUnivModel]()
     
     var selectedIndex: Int!
     
-    let personImageNameArray = ["aguri.jpg",
+    let personImageNameArray = ["dog.jpeg",
                                 "daifuku1.jpg",
                                 "honami1.jpg",
                                 "horse01.png",
@@ -36,15 +36,15 @@ class QuestionViewController: UIViewController {
                      "question008question008question008question008\nquestion008\nquestion008",
                      "question009question009question009question009\nquestion009\nquestion009question009\nquestion009\nquestion009question009\nquestion009\nquestion009question009\nquestion009\nquestion009question009\nquestion009\nquestion009question009\nquestion009\nquestion009question009\nquestion009\nquestion009question009\nquestion009\nquestion009question009\nquestion009\nquestion009question009\nquestion009\nquestion009question009\nquestion009\nquestion009question009\nquestion009\nquestion009question009"]
     
-    let answerDeadlineArray = ["2016-9-7 20:11",
-                               "2016-9-8 20:13",
-                               "2016-9-8 23:41",
-                               "2016-9-9 0:01",
-                               "2016-9-9 2:51",
-                               "2016-9-9 12:19",
-                               "2016-9-9 20:11",
-                               "2016-9-10 20:14",
-                               "2016-9-11 20:21"] // 日本時間
+    let answerDeadlineArray = ["2016/9/7 20:11",
+                               "2016/9/8 20:13",
+                               "2016/9/8 23:41",
+                               "2016/9/9 0:01",
+                               "2016/9/9 2:51",
+                               "2016/9/9 12:19",
+                               "2016/9/9 20:11",
+                               "2016/9/10 20:14",
+                               "2016/9/11 20:21"] // 日本時間
     
     let isAsweredArray = [true,false,true,true,false,true,false,false,true]
     
@@ -69,7 +69,7 @@ class QuestionViewController: UIViewController {
     func loadFirstQuestionList() {
         questionList = []
         for i in 0 ..< postArray.count {
-            let question = QuestionModel()
+            let question = QuestionForUnivModel()
             question.questionerName = personImageNameArray[i]
             question.questionerIconNSData =
                 UIImageJPEGRepresentation(UIImage(named: personImageNameArray[i])!, 0.3)

@@ -23,7 +23,7 @@ class AnswerConfirmViewController: UIViewController {
     @IBOutlet weak var answerReEditButton: UIButton!
     @IBOutlet weak var answerFinishButton: UIButton!
     
-    var selectedQuestion = QuestionModel()
+    var selectedQuestion = QuestionForUnivModel()
     var selectedIndex: Int!
     
     let margin: CGFloat = 8.0 // パーツ間の余白
