@@ -9,8 +9,8 @@
 import UIKit
 
 // 任意のquestionをtableviewから削除するのに使う
-protocol onTappedAnswerRefuseOK: class {
-    func removeQuestion(index: Int)
+protocol RemoveSelectedQuestionDelegate: class {
+    func removeSelectedQuestion(index: Int)
 }
 
 class QuestionDetailViewController: UIViewController {
@@ -29,25 +29,28 @@ class QuestionDetailViewController: UIViewController {
     var selectedQuestion = QuestionModel()
     var selectedIndex: Int!
     
-    var selectedPersonImageName: String!
-    var selectedDetailText: String!
-    
-    let matchyColor = MatchyColor()
-    
     let margin: CGFloat = 8.0 // パーツ間の余白
     var scrollHeight: CGFloat!
-    var buttonStartY: CGFloat!
     
-    var removeIndexDelegate: onTappedAnswerRefuseOK?
+    var removeSelectedQuestionDelegate: RemoveSelectedQuestionDelegate?
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        questionerNameLabel.font = UIFont.boldSystemFontOfSize(CGFloat(16))
+        
+        questionerTascaLabel.font = UIFont.systemFontOfSize(CGFloat(13))
+        questionerTascaLabel.textAlignment = .Center
+        
+        answerDeadlineLabel.textColor = UIColor.darkGrayColor()
+        answerDeadlineLabel.font = UIFont.systemFontOfSize(CGFloat(11))
+        answerDeadlineLabel.textAlignment = .Right
         
         questionTextView.delegate = self
         questionTextView.editable = false // テキスト編集可能性
         questionTextView.scrollEnabled = false
         questionTextView.font = UIFont.systemFontOfSize(CGFloat(16))
-        questionTextView.backgroundColor = matchyColor.questionBackgroundColor
+        questionTextView.backgroundColor = MatchyColor.questionBackgroundColor
         
         displayUIPartsContents()
         adjsutTextViewHeight()
@@ -59,19 +62,18 @@ class QuestionDetailViewController: UIViewController {
         questionerIconImageView.image = UIImage(data: selectedQuestion.questionerIconNSData)
         questionerNameLabel.text = selectedQuestion.questionerName
         
-        if selectedQuestion.isQuestionAnswerd {
-            questionerTascaLabel.text = "回答済: " + String(selectedQuestion.answerReward) + "助貨"
-            questionerTascaLabel.backgroundColor = MatchyColor().answerBackgroundColor
-            answerDeadlineLabel.text = "回答済の質問です"
-        } else {
-            // もしまだ期限前なら
-            questionerTascaLabel.text = "未回答: " + String(selectedQuestion.answerReward) + "助貨"
-            questionerTascaLabel.backgroundColor = MatchyColor().questionBackgroundColor
-            answerDeadlineLabel.text = "回答期限: 残り14時間"
+        // もしまだ期限前なら
+        if selectedQuestion.answerDeadlineText.calcDeadlineIntervalFromNow() > 0 {
+            questionerTascaLabel.text = String(selectedQuestion.answerReward) + "助貨"
+            questionerTascaLabel.backgroundColor = MatchyColor.questionBackgroundColor
+            answerDeadlineLabel.text = "回答期限: " +
+                selectedQuestion.answerDeadlineText.calcDeadlineIntervalFromNow().setLastTimeText()
+        }
             // もう期限を過ぎていたら
-            // questionerTascaLabel.text  = "未回答: " + String(selectedQuestion.answerReward) + "助貨"
-            // questionerTascaLabel.backgroundColor = MatchyColor().endBackgroundColor
-            // answerDeadlineLabel.text = "回答期限切れです"
+        else {
+            questionerTascaLabel.text = String(selectedQuestion.answerReward) + "助貨"
+            questionerTascaLabel.backgroundColor = MatchyColor.endBackgroundColor
+            answerDeadlineLabel.text = "回答期限切れ"
         }
         questionTextView.text = selectedQuestion.questionText
     }
@@ -84,16 +86,28 @@ class QuestionDetailViewController: UIViewController {
         questionTextView.frame = newFrame
         
         // 下のUIPartsに高さを引き継ぐ
-        buttonStartY = newFrame.origin.y + newFrame.size.height + margin
+        scrollHeight = newFrame.origin.y + newFrame.size.height + margin
         
         view.setNeedsLayout()
     }
     
     func adjsutButtonStartY() {
-        answerRefuseButton.frame.origin.y = buttonStartY
-        answerInputButton.frame.origin.y = buttonStartY
         
-        scrollHeight = buttonStartY + answerRefuseButton.frame.height + margin
+        // もしまだ期限前なら
+        if selectedQuestion.answerDeadlineText.calcDeadlineIntervalFromNow() > 0 {
+            questionTextView.text = selectedQuestion.questionText
+            
+            answerRefuseButton.frame.origin.y = scrollHeight
+            answerInputButton.frame.origin.y = scrollHeight
+            
+            scrollHeight = scrollHeight + answerRefuseButton.frame.height + margin
+        }
+            // もう期限を過ぎていたら
+        else {
+            // 回答ボタンを消す
+            answerRefuseButton.removeFromSuperview()
+            answerInputButton.removeFromSuperview()
+        }
         
         view.setNeedsLayout()
     }
@@ -112,7 +126,7 @@ class QuestionDetailViewController: UIViewController {
         let okAction: UIAlertAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: {(
             action: UIAlertAction!) -> Void in
             // cellからこの質問を削除
-            self.removeIndexDelegate?.removeQuestion(self.selectedIndex)
+            self.removeSelectedQuestionDelegate?.removeSelectedQuestion(self.selectedIndex)
             
             // tableViewに戻る
             self.navigationController?.popToViewController(self.navigationController!.viewControllers[0], animated: true)

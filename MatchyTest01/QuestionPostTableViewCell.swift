@@ -9,30 +9,36 @@
 import UIKit
 
 class QuestionPostTableViewCell: UITableViewCell {
-
-    @IBOutlet weak var nameLabel: UILabel!
-    @IBOutlet weak var detailLabel: UILabel!
+    
     @IBOutlet weak var iconImageView: UIImageView!
-    @IBOutlet weak var answerStatusLabel: UILabel!
+    @IBOutlet weak var answerRewardLabel: UILabel!
+    @IBOutlet weak var nameLabel: UILabel!
+    @IBOutlet weak var deadlineLabel: UILabel!
+    @IBOutlet weak var detailLabel: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+    
+        answerRewardLabel.font = UIFont.systemFontOfSize(CGFloat(12))
+        answerRewardLabel.textAlignment = .Center
+        answerRewardLabel.layer.masksToBounds = true
+        answerRewardLabel.layer.cornerRadius = answerRewardLabel.frame.height / 2
         
-        // 複数行表示を許可
+        nameLabel.font = UIFont.boldSystemFontOfSize(CGFloat(16))
+        
+        deadlineLabel.textColor = UIColor.darkGrayColor()
+        deadlineLabel.font = UIFont.systemFontOfSize(CGFloat(11))
+        
         detailLabel.numberOfLines = 2
         detailLabel.lineBreakMode = .ByCharWrapping
-        detailLabel.font = UIFont.systemFontOfSize(CGFloat(10))
-        
-        answerStatusLabel.font = UIFont.systemFontOfSize(CGFloat(14))
-        answerStatusLabel.textAlignment = .Center
-        answerStatusLabel.backgroundColor = MatchyColor().questionBackgroundColor
+        detailLabel.font = UIFont.systemFontOfSize(CGFloat(13))
         
     }
-
+    
     override func setSelected(selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
+        
         // Configure the view for the selected state
     }
     
@@ -44,16 +50,23 @@ class QuestionPostTableViewCell: UITableViewCell {
         iconImageView.image = UIImage(data: question.questionerIconNSData)
         
         if question.isQuestionAnswerd {
-            answerStatusLabel.text = "回答済: " + String(question.answerReward) + "助貨"
-            answerStatusLabel.backgroundColor = MatchyColor().answerBackgroundColor
+            answerRewardLabel.text = String(question.answerReward) + "助貨"
+            answerRewardLabel.backgroundColor = MatchyColor.answerBackgroundColor
+            deadlineLabel.text = "回答完了"
         } else {
             // もしまだ期限前なら
-            answerStatusLabel.text = "未回答: " + String(question.answerReward) + "助貨"
-            answerStatusLabel.backgroundColor = MatchyColor().questionBackgroundColor
-            // もう期限を過ぎていたら
-            // answerStatusLabel.text = "回答受付終了"
-            // answerStatusLabel.backgroundColor = MatchyColor().endBackgroundColor
+            if question.answerDeadlineText.calcDeadlineIntervalFromNow() > 0 {
+                answerRewardLabel.text = String(question.answerReward) + "助貨"
+                answerRewardLabel.backgroundColor = MatchyColor.questionBackgroundColor
+                deadlineLabel.text = "回答期限: " +
+                    question.answerDeadlineText.calcDeadlineIntervalFromNow().setLastTimeText()
+            }
+                // もう期限を過ぎていたら
+            else {
+                answerRewardLabel.text = String(question.answerReward) + "助貨"
+                answerRewardLabel.backgroundColor = MatchyColor.endBackgroundColor
+                deadlineLabel.text = "回答期限切れ"
+            }
         }
     }
-    
 }

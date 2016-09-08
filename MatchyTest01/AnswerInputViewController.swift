@@ -17,12 +17,11 @@ class AnswerInputViewController: UIViewController {
     @IBOutlet weak var questionerTascaLabel: UILabel!
     @IBOutlet weak var answerDeadlineLabel: UILabel!
     @IBOutlet weak var questionTextView: UITextView!
+    @IBOutlet weak var separateYourAnswerLabel: UILabel!
     @IBOutlet weak var answerInputTextView: UITextView!
     
     var selectedQuestion = QuestionModel()
     var selectedIndex: Int!
-    
-    let matchyColor = MatchyColor()
     
     let margin: CGFloat = 8.0 // パーツ間の余白
     var scrollHeight: CGFloat!
@@ -35,8 +34,12 @@ class AnswerInputViewController: UIViewController {
         
         displayUIPartsContents()
         setUpTextView()
+        setUpQuestionTextViewHeight()
+        setUpSeparateYourAnswerLabelPosition()
+        adjsutAnswerInputTextViewHeight()
         
-        let doneNavigationButton = UIBarButtonItem(title: "完了", style: .Done, target: self, action: "inputDone")
+        
+        let doneNavigationButton = UIBarButtonItem(title: "完了", style: .Done, target: self, action: "answerInputDone")
         navigationItem.rightBarButtonItem = doneNavigationButton
         
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "keyboardWillShow:", name: UIKeyboardWillShowNotification, object: nil)
@@ -46,45 +49,48 @@ class AnswerInputViewController: UIViewController {
     func displayUIPartsContents() {
         questionerIconImageView.image = UIImage(data: selectedQuestion.questionerIconNSData)
         questionerNameLabel.text = selectedQuestion.questionerName
+        separateYourAnswerLabel.text = "あなたの回答"
+        answerInputTextView.text = ""
         
-        if selectedQuestion.isQuestionAnswerd {
-            questionerTascaLabel.text = "回答済: " + String(selectedQuestion.answerReward) + "助貨"
-            questionerTascaLabel.backgroundColor = MatchyColor().answerBackgroundColor
-            answerDeadlineLabel.text = "回答済の質問です"
-        } else {
-            // もしまだ期限前なら
-            questionerTascaLabel.text = "未回答: " + String(selectedQuestion.answerReward) + "助貨"
-            questionerTascaLabel.backgroundColor = MatchyColor().questionBackgroundColor
-            answerDeadlineLabel.text = "回答期限: 残り14時間"
-            // もう期限を過ぎていたら
-            // questionerTascaLabel.text  = "未回答: " + String(selectedQuestion.answerReward) + "助貨"
-            // questionerTascaLabel.backgroundColor = MatchyColor().endBackgroundColor
-            // answerDeadlineLabel.text = "回答期限切れです"
+        // もしまだ期限前なら
+        if selectedQuestion.answerDeadlineText.calcDeadlineIntervalFromNow() > 0 {
+            questionerTascaLabel.text = String(selectedQuestion.answerReward) + "助貨"
+            questionerTascaLabel.backgroundColor = MatchyColor.questionBackgroundColor
+            answerDeadlineLabel.text = "回答期限: " +
+                selectedQuestion.answerDeadlineText.calcDeadlineIntervalFromNow().setLastTimeText()
+        }
+        // もう期限を過ぎていたら
+        else {
+            questionerTascaLabel.text = String(selectedQuestion.answerReward) + "助貨"
+            questionerTascaLabel.backgroundColor = MatchyColor.endBackgroundColor
+            answerDeadlineLabel.text = "回答期限切れ"
         }
         questionTextView.text = selectedQuestion.questionText
-
-        answerInputTextView.text = "ここに回答を入力"
     }
     
     func setUpTextView() {
+        questionerNameLabel.font = UIFont.boldSystemFontOfSize(CGFloat(16))
+        
+        questionerTascaLabel.textAlignment = .Center
+        
         questionTextView.delegate = self
         questionTextView.editable = false
         questionTextView.scrollEnabled = false
         questionTextView.tag = 1
         questionTextView.font = UIFont.systemFontOfSize(CGFloat(12))
-        questionTextView.backgroundColor = matchyColor.questionBackgroundColor
+        questionTextView.backgroundColor = MatchyColor.questionBackgroundColor
+        
+        separateYourAnswerLabel.font = UIFont.systemFontOfSize(CGFloat(10))
+        separateYourAnswerLabel.textColor = UIColor.darkGrayColor()
         
         answerInputTextView.delegate = self
         answerInputTextView.editable = true
         answerInputTextView.scrollEnabled = false
         answerInputTextView.tag = 2
         answerInputTextView.layer.masksToBounds = true
-        answerInputTextView.layer.cornerRadius = 8.0
+        answerInputTextView.layer.cornerRadius = 6.0
         answerInputTextView.layer.borderWidth = 1
         answerInputTextView.layer.borderColor = UIColor.blackColor().CGColor
-        
-        setUpQuestionTextViewHeight()
-        adjsutAnswerInputTextViewHeight()
         
         answerInputTextView.becomeFirstResponder()
     }
@@ -99,7 +105,14 @@ class AnswerInputViewController: UIViewController {
         view.setNeedsLayout()
         
         // 下のUIPartsに高さを引き継ぐ
-        answerInputTextView.frame.origin.y = newFrame.origin.y + newFrame.size.height + margin
+        separateYourAnswerLabel.frame.origin.y = newFrame.origin.y + newFrame.size.height + margin
+    }
+    
+    func setUpSeparateYourAnswerLabelPosition() {
+        view.setNeedsLayout()
+        // 下のUIPartsに高さを引き継ぐ
+        answerInputTextView.frame.origin.y =
+            separateYourAnswerLabel.frame.origin.y + separateYourAnswerLabel.frame.size.height + margin
     }
     
     func adjsutAnswerInputTextViewHeight() {
@@ -131,7 +144,8 @@ class AnswerInputViewController: UIViewController {
         }
     }
     
-    func inputDone() {
+    func answerInputDone() {
+        selectedQuestion.answerText = answerInputTextView.text
         performSegueWithIdentifier("toAnswerConfirmVC", sender: nil)
     }
     
@@ -145,7 +159,6 @@ class AnswerInputViewController: UIViewController {
             let nextVC = segue.destinationViewController as! AnswerConfirmViewController
             nextVC.selectedIndex = self.selectedIndex
             nextVC.selectedQuestion = self.selectedQuestion
-            nextVC.answerText = self.answerInputTextView.text
         }
     }
     

@@ -54,6 +54,9 @@
 		634881711D7E9A6900038261 /* QuestionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 634881701D7E9A6900038261 /* QuestionModel.swift */; };
 		634881721D7E9A6900038261 /* QuestionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 634881701D7E9A6900038261 /* QuestionModel.swift */; };
 		634881731D7E9A6900038261 /* QuestionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 634881701D7E9A6900038261 /* QuestionModel.swift */; };
+		63D26F7A1D804B0000FEE093 /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63D26F791D804AFF00FEE093 /* String+Extension.swift */; };
+		63D26F7C1D804DC500FEE093 /* NSTimeInterval+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63D26F7B1D804DC500FEE093 /* NSTimeInterval+Extension.swift */; };
+		63D26F821D80EBB200FEE093 /* HighSchUser-Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 63D26F811D80EBB200FEE093 /* HighSchUser-Main.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -115,6 +118,9 @@
 		634881671D7D5B0700038261 /* AnswerConfirmViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnswerConfirmViewController.swift; sourceTree = "<group>"; };
 		6348816B1D7D787500038261 /* MatchyColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MatchyColor.swift; sourceTree = "<group>"; };
 		634881701D7E9A6900038261 /* QuestionModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuestionModel.swift; sourceTree = "<group>"; };
+		63D26F791D804AFF00FEE093 /* String+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Extension.swift"; sourceTree = "<group>"; };
+		63D26F7B1D804DC500FEE093 /* NSTimeInterval+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSTimeInterval+Extension.swift"; sourceTree = "<group>"; };
+		63D26F811D80EBB200FEE093 /* HighSchUser-Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = "HighSchUser-Main.storyboard"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -169,8 +175,10 @@
 				633ABBF11D6F1A2F004819D1 /* AppDelegate.swift */,
 				633ABBF31D6F1A2F004819D1 /* TopBranchViewController.swift */,
 				633ABBF51D6F1A2F004819D1 /* Top-Main.storyboard */,
-				6348816F1D7E887C00038261 /* UnivView */,
 				6348816B1D7D787500038261 /* MatchyColor.swift */,
+				6348816F1D7E887C00038261 /* UniversityView */,
+				63D26F801D80EB0000FEE093 /* HighSchoolView */,
+				63D26F7D1D80E7BB00FEE093 /* Extension */,
 				6348811A1D7A578C00038261 /* sampleImage */,
 				633ABBF81D6F1A2F004819D1 /* Assets.xcassets */,
 				633ABBFD1D6F1A2F004819D1 /* Info.plist */,
@@ -252,21 +260,54 @@
 			path = Defaults;
 			sourceTree = "<group>";
 		};
-		6348816F1D7E887C00038261 /* UnivView */ = {
+		6348816F1D7E887C00038261 /* UniversityView */ = {
 			isa = PBXGroup;
 			children = (
 				634881491D7D427200038261 /* UnivTabBarController.swift */,
+				63D26F7F1D80EA9400FEE093 /* QuestionView */,
+				63D26F7E1D80EA6E00FEE093 /* MyPageView */,
+				634881101D7A520600038261 /* UnivUser-Main.storyboard */,
+			);
+			name = UniversityView;
+			sourceTree = "<group>";
+		};
+		63D26F7D1D80E7BB00FEE093 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				63D26F791D804AFF00FEE093 /* String+Extension.swift */,
+				63D26F7B1D804DC500FEE093 /* NSTimeInterval+Extension.swift */,
+			);
+			name = Extension;
+			sourceTree = "<group>";
+		};
+		63D26F7E1D80EA6E00FEE093 /* MyPageView */ = {
+			isa = PBXGroup;
+			children = (
 				6348810E1D7A514900038261 /* UnivMyPageViewController.swift */,
 				6348812F1D7A834A00038261 /* UnivFollowerTableViewCell.swift */,
+			);
+			name = MyPageView;
+			sourceTree = "<group>";
+		};
+		63D26F7F1D80EA9400FEE093 /* QuestionView */ = {
+			isa = PBXGroup;
+			children = (
+				634881701D7E9A6900038261 /* QuestionModel.swift */,
 				6348811C1D7A7E6600038261 /* QuestionViewController.swift */,
 				634881311D7A992500038261 /* QuestionPostTableViewCell.swift */,
 				634881331D7AA88000038261 /* QuestionDetailViewController.swift */,
 				634881371D7AFB7C00038261 /* AnswerInputViewController.swift */,
 				634881671D7D5B0700038261 /* AnswerConfirmViewController.swift */,
-				634881101D7A520600038261 /* UnivUser-Main.storyboard */,
-				634881701D7E9A6900038261 /* QuestionModel.swift */,
 			);
-			name = UnivView;
+			name = QuestionView;
+			sourceTree = "<group>";
+		};
+		63D26F801D80EB0000FEE093 /* HighSchoolView */ = {
+			isa = PBXGroup;
+			children = (
+				63D26F811D80EBB200FEE093 /* HighSchUser-Main.storyboard */,
+			);
+			name = HighSchoolView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -385,6 +426,7 @@
 				634881281D7A7FA800038261 /* daifuku1.jpg in Resources */,
 				6348812A1D7A7FA800038261 /* horse01.png in Resources */,
 				634881561D7D441700038261 /* Default-568h@2x.png in Resources */,
+				63D26F821D80EBB200FEE093 /* HighSchUser-Main.storyboard in Resources */,
 				634881161D7A578800038261 /* tab_mypage_T.png in Resources */,
 				6348815C1D7D441700038261 /* Default-736h@3x.png in Resources */,
 				633ABBF91D6F1A2F004819D1 /* Assets.xcassets in Resources */,
@@ -433,6 +475,7 @@
 				633ABBF41D6F1A2F004819D1 /* TopBranchViewController.swift in Sources */,
 				6348811D1D7A7E6600038261 /* QuestionViewController.swift in Sources */,
 				634881341D7AA88000038261 /* QuestionDetailViewController.swift in Sources */,
+				63D26F7C1D804DC500FEE093 /* NSTimeInterval+Extension.swift in Sources */,
 				634881621D7D441700038261 /* StoryboardHelper.swift in Sources */,
 				634881711D7E9A6900038261 /* QuestionModel.swift in Sources */,
 				634881681D7D5B0700038261 /* AnswerConfirmViewController.swift in Sources */,
@@ -440,6 +483,7 @@
 				633ABBF21D6F1A2F004819D1 /* AppDelegate.swift in Sources */,
 				6348814A1D7D427200038261 /* UnivTabBarController.swift in Sources */,
 				6348816C1D7D787500038261 /* MatchyColor.swift in Sources */,
+				63D26F7A1D804B0000FEE093 /* String+Extension.swift in Sources */,
 				634881301D7A834A00038261 /* UnivFollowerTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

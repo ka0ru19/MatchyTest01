@@ -10,9 +10,15 @@ import UIKit
 
 class MatchyColor: UIColor {
     
-    let questionBackgroundColor = UIColor(red: 255/255, green: 112/255, blue: 183/255, alpha: 1.0)
-    let answerBackgroundColor = UIColor(red: 112/255, green: 183/255, blue: 255/255, alpha: 1.0)
-    let endBackgroundColor = UIColor(red: 127/255, green: 127/255, blue: 127/255, alpha: 1.0)
+    static let questionBackgroundColor = UIColor(red: 255/255, green: 112/255, blue: 183/255, alpha: 1.0)
+    static let answerBackgroundColor = UIColor(red: 112/255, green: 183/255, blue: 255/255, alpha: 1.0)
+    static let endBackgroundColor = UIColor(red: 127/255, green: 127/255, blue: 127/255, alpha: 1.0)
+    
+//    static var i = 0
+//    
+//    func change() {
+//        MatchyColor.i = 1
+//    }
     
 //    func questionBackgroundColor() -> UIColor {
 //        return UIColor(red: 255/255, green: 112/255, blue: 183/255, alpha: 1.0) // #ff70b7

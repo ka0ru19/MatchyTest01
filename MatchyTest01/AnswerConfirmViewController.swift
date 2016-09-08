@@ -17,6 +17,7 @@ class AnswerConfirmViewController: UIViewController {
     @IBOutlet weak var questionerTascaLabel: UILabel!
     @IBOutlet weak var answerDeadlineLabel: UILabel!
     @IBOutlet weak var questionTextView: UITextView!
+    @IBOutlet weak var separateYourAnswerLabel: UILabel!
     @IBOutlet weak var answerTextView: UITextView!
     
     @IBOutlet weak var answerReEditButton: UIButton!
@@ -24,19 +25,19 @@ class AnswerConfirmViewController: UIViewController {
     
     var selectedQuestion = QuestionModel()
     var selectedIndex: Int!
-    var answerText: String!
-    
-    let matchyColor = MatchyColor()
     
     let margin: CGFloat = 8.0 // パーツ間の余白
     var scrollHeight: CGFloat!
     let tabBarHieght = UITabBarController().tabBar.frame.size.height
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         displayUIPartsContents()
         setUpTextView()
+        setUpQuestionTextViewHeight()
+        setUpSeparateYourAnswerLabelPosition()
+        setUpanswerTextViewHeight()
         setUpButtonStartY()
         answerConfirmScrollView.contentSize = CGSizeMake(self.view.frame.size.width, scrollHeight)
     }
@@ -44,40 +45,39 @@ class AnswerConfirmViewController: UIViewController {
     func displayUIPartsContents() {
         questionerIconImageView.image = UIImage(data: selectedQuestion.questionerIconNSData)
         questionerNameLabel.text = selectedQuestion.questionerName
+        separateYourAnswerLabel.text = "あなたの回答"
         
-        if selectedQuestion.isQuestionAnswerd {
-            questionerTascaLabel.text = "回答済: " + String(selectedQuestion.answerReward) + "助貨"
-            questionerTascaLabel.backgroundColor = MatchyColor().answerBackgroundColor
-            answerDeadlineLabel.text = "回答済の質問です"
-        } else {
-            // もしまだ期限前なら
-            questionerTascaLabel.text = "未回答: " + String(selectedQuestion.answerReward) + "助貨"
-            questionerTascaLabel.backgroundColor = MatchyColor().questionBackgroundColor
-            answerDeadlineLabel.text = "回答期限: 残り14時間"
+        // もしまだ期限前なら
+        if selectedQuestion.answerDeadlineText.calcDeadlineIntervalFromNow() > 0 {
+            questionerTascaLabel.text = String(selectedQuestion.answerReward) + "助貨"
+            questionerTascaLabel.backgroundColor = MatchyColor.questionBackgroundColor
+            answerDeadlineLabel.text = "回答期限: " +
+                selectedQuestion.answerDeadlineText.calcDeadlineIntervalFromNow().setLastTimeText()
+        }
             // もう期限を過ぎていたら
-            // questionerTascaLabel.text  = "未回答: " + String(selectedQuestion.answerReward) + "助貨"
-            // questionerTascaLabel.backgroundColor = MatchyColor().endBackgroundColor
-            // answerDeadlineLabel.text = "回答期限切れです"
+        else {
+            questionerTascaLabel.text = String(selectedQuestion.answerReward) + "助貨"
+            questionerTascaLabel.backgroundColor = MatchyColor.endBackgroundColor
+            answerDeadlineLabel.text = "回答期限切れ"
         }
         questionTextView.text = selectedQuestion.questionText
-
-        answerTextView.text = answerText
+        
+        answerTextView.text = selectedQuestion.answerText
     }
     
     func setUpTextView() {
-        
         questionTextView.editable = false
         questionTextView.scrollEnabled = false
         questionTextView.font = UIFont.systemFontOfSize(CGFloat(14))
-        questionTextView.backgroundColor = matchyColor.questionBackgroundColor
+        questionTextView.backgroundColor = MatchyColor.questionBackgroundColor
+        
+        separateYourAnswerLabel.font = UIFont.systemFontOfSize(CGFloat(10))
+        separateYourAnswerLabel.textColor = UIColor.darkGrayColor()
         
         answerTextView.editable = false
         answerTextView.scrollEnabled = false
         answerTextView.font = UIFont.systemFontOfSize(CGFloat(14))
-        answerTextView.backgroundColor = matchyColor.answerBackgroundColor
-        
-        setUpQuestionTextViewHeight()
-        setUpanswerTextViewHeight()
+        answerTextView.backgroundColor = MatchyColor.answerBackgroundColor
     }
     
     func setUpQuestionTextViewHeight() { // 最初に一回だけ呼ばれる
@@ -90,7 +90,14 @@ class AnswerConfirmViewController: UIViewController {
         view.setNeedsLayout()
         
         // 下のUIPartsに高さを引き継ぐ
-        answerTextView.frame.origin.y = newFrame.origin.y + newFrame.size.height + margin
+        separateYourAnswerLabel.frame.origin.y = newFrame.origin.y + newFrame.size.height + margin
+    }
+    
+    func setUpSeparateYourAnswerLabelPosition() {
+        view.setNeedsLayout()
+        // 下のUIPartsに高さを引き継ぐ
+        answerTextView.frame.origin.y =
+            separateYourAnswerLabel.frame.origin.y + separateYourAnswerLabel.frame.size.height + margin
     }
     
     func setUpanswerTextViewHeight() {
@@ -102,17 +109,22 @@ class AnswerConfirmViewController: UIViewController {
         answerTextView.frame = newFrame
         view.setNeedsLayout()
         
-        // 下のUIPartsに高さを引き継ぐ
+        // 下のUIPartsとscrollHeightに高さを引き継ぐ
         answerReEditButton.frame.origin.y = newFrame.origin.y + newFrame.size.height + margin
         answerFinishButton.frame.origin.y = newFrame.origin.y + newFrame.size.height + margin
+        scrollHeight = newFrame.origin.y + newFrame.height + margin
     }
     
     func setUpButtonStartY() {
+        if selectedQuestion.isQuestionAnswerd == false {
+            scrollHeight = answerReEditButton.frame.origin.y + answerReEditButton.frame.height + margin
+        } else {
+            answerReEditButton.removeFromSuperview()
+            answerFinishButton.removeFromSuperview()
+        }
         view.setNeedsLayout()
-        
-        scrollHeight = answerReEditButton.frame.origin.y + answerReEditButton.frame.height + margin
     }
-
+    
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -127,32 +139,35 @@ class AnswerConfirmViewController: UIViewController {
     @IBAction func onTappedAnswerFinish(sender: UIButton) {
         // 入力完了のアラートを表示
         // アラートを表示
-        let alert: UIAlertController = UIAlertController(title: "完了", message: "回答が完了しました", preferredStyle:  UIAlertControllerStyle.Alert)
-        let okAction: UIAlertAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: {(
-            action: UIAlertAction!) -> Void in
-            self.finishAnswer()
-            // 質問一覧のtableViewまで戻る
-            self.navigationController?.popToViewController(self.navigationController!.viewControllers[0], animated: true)
-        })
-        alert.addAction(okAction)
-        presentViewController(alert, animated: true, completion: nil)
+        if selectedQuestion.answerDeadlineText.calcDeadlineIntervalFromNow() > 0 {
+            let alert: UIAlertController = UIAlertController(title: "完了", message: "回答が完了しました", preferredStyle:  UIAlertControllerStyle.Alert)
+            let okAction: UIAlertAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: {(
+                action: UIAlertAction!) -> Void in
+                self.finishAnswer()
+                // 質問一覧のtableViewまで戻る
+                self.navigationController?.popToViewController(self.navigationController!.viewControllers[0], animated: true)
+                
+            })
+            alert.addAction(okAction)
+            presentViewController(alert, animated: true, completion: nil)
+        } else {
+            print("回答期限切れ")
+            // アラートを表示
+            let alert: UIAlertController = UIAlertController(title: "回答期限切れ", message: "手遅れです。。", preferredStyle:  UIAlertControllerStyle.Alert)
+            let okAction: UIAlertAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: {(
+                action: UIAlertAction!) -> Void in
+                // 質問一覧のtableViewまで戻る
+                self.navigationController?.popToViewController(self.navigationController!.viewControllers[0], animated: true)
+            })
+            alert.addAction(okAction)
+            presentViewController(alert, animated: true, completion: nil)
+            
+        }
     }
     
     func finishAnswer() {
-        selectedQuestion.answerText = self.answerText
-        selectedQuestion.isQuestionAnswerd = true
+        selectedQuestion.writeQuestionAnswerText(self.answerTextView.text)
     }
-    
-    /*
-     // MARK: - Navigation
-     
-     // In a storyboard-based application, you will often want to do a little preparation before navigation
-     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-     // Get the new view controller using segue.destinationViewController.
-     // Pass the selected object to the new view controller.
-     }
-     */
-    
 }
 
 

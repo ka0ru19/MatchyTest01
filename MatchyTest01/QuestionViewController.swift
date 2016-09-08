@@ -10,6 +10,12 @@ import UIKit
 
 class QuestionViewController: UIViewController {
     
+    @IBOutlet weak var questionTableView: UITableView!
+    
+    var questionList = [QuestionModel]()
+    
+    var selectedIndex: Int!
+    
     let personImageNameArray = ["aguri.jpg",
                                 "daifuku1.jpg",
                                 "honami1.jpg",
@@ -30,16 +36,21 @@ class QuestionViewController: UIViewController {
                      "question008question008question008question008\nquestion008\nquestion008",
                      "question009question009question009question009\nquestion009\nquestion009question009\nquestion009\nquestion009question009\nquestion009\nquestion009question009\nquestion009\nquestion009question009\nquestion009\nquestion009question009\nquestion009\nquestion009question009\nquestion009\nquestion009question009\nquestion009\nquestion009question009\nquestion009\nquestion009question009\nquestion009\nquestion009question009\nquestion009\nquestion009question009\nquestion009\nquestion009question009"]
     
-    @IBOutlet weak var questionTableView: UITableView!
+    let answerDeadlineArray = ["2016-9-7 20:11",
+                               "2016-9-8 20:13",
+                               "2016-9-8 23:41",
+                               "2016-9-9 0:01",
+                               "2016-9-9 2:51",
+                               "2016-9-9 12:19",
+                               "2016-9-9 20:11",
+                               "2016-9-10 20:14",
+                               "2016-9-11 20:21"] // 日本時間
     
-    var questionList = [QuestionModel]()
-    
-    var selectedIndex: Int!
+    let isAsweredArray = [true,false,true,true,false,true,false,false,true]
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // Do any additional setup after loading the view.
         questionTableView.delegate = self
         questionTableView.dataSource = self
         
@@ -64,8 +75,8 @@ class QuestionViewController: UIViewController {
                 UIImageJPEGRepresentation(UIImage(named: personImageNameArray[i])!, 0.3)
             question.questionerIconName = personImageNameArray[i]
             question.questionText = postArray[i]
-            question.isQuestionAnswerd = false
-            question.answerDeadlineText = "2016-09-08 17:39"
+            question.isQuestionAnswerd = isAsweredArray[i]
+            question.answerDeadlineText = answerDeadlineArray[i]
             question.answerReward = String(123 * i)
             questionList.append(question)
         }
@@ -75,7 +86,11 @@ class QuestionViewController: UIViewController {
         if segue.identifier == "toQuestionDetailVC" {
             let nextVC = segue.destinationViewController as! QuestionDetailViewController
             // 任意のquestionをtableviewから削除するのに使う
-            nextVC.removeIndexDelegate = self
+            nextVC.removeSelectedQuestionDelegate = self
+            nextVC.selectedIndex = self.selectedIndex
+            nextVC.selectedQuestion = questionList[self.selectedIndex]
+        } else if segue.identifier == "toAnswerConfirmVC" {
+            let nextVC = segue.destinationViewController as! AnswerConfirmViewController
             nextVC.selectedIndex = self.selectedIndex
             nextVC.selectedQuestion = questionList[self.selectedIndex]
         }
@@ -84,8 +99,8 @@ class QuestionViewController: UIViewController {
 }
 
 // 任意のquestionをtableviewから削除するのに使う
-extension QuestionViewController: onTappedAnswerRefuseOK {
-    func removeQuestion(index: Int) {
+extension QuestionViewController: RemoveSelectedQuestionDelegate /*onTappedAnswerRefuseOK*/ {
+    func removeSelectedQuestion(index: Int) {
         questionList.removeAtIndex(index)
     }
 }
@@ -111,9 +126,12 @@ extension QuestionViewController: UITableViewDelegate, UITableViewDataSource {
     }
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         selectedIndex = indexPath.row
-        performSegueWithIdentifier("toQuestionDetailVC", sender: nil)
+        if questionList[selectedIndex].isQuestionAnswerd == false {
+            performSegueWithIdentifier("toQuestionDetailVC", sender: nil)
+        } else {
+            performSegueWithIdentifier("toAnswerConfirmVC", sender: nil)
+        }
     }
 }
-
 
 
