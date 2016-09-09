@@ -73,13 +73,7 @@ extension MyQuestionListTableViewCell {
         questionDetailLabel.lineBreakMode = .ByCharWrapping
         questionDetailLabel.font = UIFont.systemFontOfSize(CGFloat(13))
 //        questionOptionButton
-//        respondent0IconImageView.layer.borderWidth = 4
-//        respondent0IconImageView.layer.borderColor = MatchyColor.questionBackgroundColor.CGColor
-
-        //        respondent1IconImageView
-        //        respondent2IconImageView
-        //        respondent3IconImageView
-        //        respondent4IconImageView
+        
         answerRewardLabel.textAlignment = .Right
         answerRewardLabel.textColor = UIColor.darkGrayColor()
         answerRewardLabel.font = UIFont.systemFontOfSize(CGFloat(10))

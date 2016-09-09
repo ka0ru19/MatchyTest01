@@ -208,18 +208,12 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="【質問title】" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="256-nK-aMF">
-                                                    <rect key="frame" x="8" y="8" width="190" height="18"/>
+                                                    <rect key="frame" x="8" y="8" width="191" height="18"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text=" 2016/09/08 20:19" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="txK-hl-GT1">
-                                                    <rect key="frame" x="206" y="8" width="106" height="18"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                                    <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="詳細1234567890(codeで制御)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gph-jo-pG8">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="詳細1234567890(codeで制御 3行まで)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gph-jo-pG8">
                                                     <rect key="frame" x="8" y="34" width="254" height="58"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="11"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -247,6 +241,9 @@
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="q0q-bY-tlP">
                                                     <rect key="frame" x="158" y="100" width="32" height="32"/>
                                                 </imageView>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="qij-gG-fXP">
+                                                    <rect key="frame" x="198" y="100" width="32" height="32"/>
+                                                </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="450助貨" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VwN-Wk-J0q">
                                                     <rect key="frame" x="252" y="100" width="60" height="15"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="11"/>
@@ -259,9 +256,12 @@
                                                     <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="qij-gG-fXP">
-                                                    <rect key="frame" x="198" y="100" width="32" height="32"/>
-                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text=" 2016/09/08 20:19" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="txK-hl-GT1">
+                                                    <rect key="frame" x="207" y="8" width="105" height="18"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                                                    <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
                                             </subviews>
                                         </tableViewCellContentView>
                                         <connections>
@@ -286,12 +286,46 @@
                     <navigationItem key="navigationItem" title="自分の質問" id="R35-cu-aYJ"/>
                     <connections>
                         <outlet property="myQuestionListTableView" destination="4eN-v9-6hT" id="GH2-te-VKd"/>
-                        <segue destination="Kxt-sH-Nqg" kind="push" id="olM-It-0ZC"/>
+                        <segue destination="kea-Bn-v7v" kind="push" identifier="toQuestionDetailVC" id="HJT-CY-sES"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="z5I-No-oq3" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="964" y="-1276"/>
+        </scene>
+        <!--質問と回答-->
+        <scene sceneID="8cH-ic-5Jn">
+            <objects>
+                <viewController id="kea-Bn-v7v" customClass="MyQuestionDetailViewController" customModule="MatchyTest01" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="uOL-pF-Fgr"/>
+                        <viewControllerLayoutGuide type="bottom" id="Mmk-12-3oN"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="YU9-Ic-Wgh">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="300" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="76R-DQ-vDG">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="76R-DQ-vDG" firstAttribute="leading" secondItem="YU9-Ic-Wgh" secondAttribute="leading" id="OWz-pt-Z0e"/>
+                            <constraint firstAttribute="trailing" secondItem="76R-DQ-vDG" secondAttribute="trailing" id="Ujc-dP-ELI"/>
+                            <constraint firstAttribute="bottom" secondItem="76R-DQ-vDG" secondAttribute="bottom" id="lNd-K0-WFR"/>
+                            <constraint firstItem="76R-DQ-vDG" firstAttribute="top" secondItem="YU9-Ic-Wgh" secondAttribute="top" id="sE4-bQ-iq3"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="質問と回答" id="eii-is-m7v"/>
+                    <connections>
+                        <outlet property="questionDetailTableView" destination="76R-DQ-vDG" id="FR9-iR-ZYt"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="iFG-dk-53M" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1430" y="-1002"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="5Nc-dT-xPz">
@@ -371,7 +405,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DVK-5D-Xee" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1398" y="-1276"/>
+            <point key="canvasLocation" x="1431" y="-1628"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="sAs-Sh-AeR">

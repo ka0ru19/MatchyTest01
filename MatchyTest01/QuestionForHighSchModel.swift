@@ -25,4 +25,7 @@ class QuestionForHighSchModel {
     var answerReward: String! // 650助貨 -> 650
     
     var respondents = [RespondentModel]() // 質問の相手 1~5
+    
+    // 配置
+    var questionDetailCellHeight: CGFloat!
 }

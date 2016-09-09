@@ -16,6 +16,10 @@ class RespondentModel {
     var iconImage: UIImage!
     var isQuestionAnswerd: Bool = false
     var answerText: String = ""
+    var answerDateText: String!
     var answerDate: NSDate!
     
+    // 配置
+    var answerCellHeight: CGFloat!
+
 }

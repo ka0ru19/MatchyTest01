@@ -14,6 +14,8 @@ class MyQuestionListViewController: UIViewController {
     
     var sampleQuestionList = [QuestionForHighSchModel]()
     
+    var selectedQuestion = QuestionForHighSchModel()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -76,10 +78,25 @@ extension MyQuestionListViewController {
         
         let sampleIsQuestionAnswerdArray = [[false,true,false],
                                             [true,false],
-                                            [false,false,false,true],
+                                            [false,false,false,false],
                                             [true,false,true],
                                             [false,true,true],
                                             [false,false,true,false,false]]
+        
+        let sampleAnswerTextArray = [["","answer1",""],
+                                     ["answer2",""],
+                                     ["","","",""],
+                                     ["answer4","","answer4-2"],
+                                     ["","answer5","answer5-2"],
+                                     ["","","answer6\n\n\n\n\nanswer6\nanswer6answer6","",""]]
+        
+        let sampleAnswerDateTextArray = [["","2016/09/16 10:35",""],
+                                          ["2016/09/15 1:33",""],
+                                          ["","","",""],
+                                          ["2016/09/13 13:43","","2016/09/13 7:27"],
+                                          ["","2016/09/12 10:34","2016/09/12 9:33"],
+                                          ["","","2016/09/11 21:38","",""]]
+
         
         var sampleQuestionRespondent = [[RespondentModel]]()
         for j in 0 ..< respondentNameArray.count {
@@ -91,7 +108,8 @@ extension MyQuestionListViewController {
                 respondent.iconImage = UIImage(named: respondentNameArray[j][i])
                 respondent.iconNSData = UIImageJPEGRepresentation(UIImage(named: respondentNameArray[j][i])!, 0.3)
                 respondent.isQuestionAnswerd = sampleIsQuestionAnswerdArray[j][i]
-                respondent.answerText = ""
+                respondent.answerText = sampleAnswerTextArray[j][i]
+                respondent.answerDateText = sampleAnswerDateTextArray[j][i]
                 respondentArray.append(respondent)
             }
             sampleQuestionRespondent.append(respondentArray)
@@ -118,6 +136,13 @@ extension MyQuestionListViewController {
         
         print(sampleQuestionList)
     }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "toQuestionDetailVC" {
+            let nextVC = segue.destinationViewController as! MyQuestionDetailViewController
+            nextVC.selectedQuestion = self.selectedQuestion
+        }
+    }
 }
 
 extension MyQuestionListViewController: UITableViewDelegate, UITableViewDataSource {
@@ -131,16 +156,14 @@ extension MyQuestionListViewController: UITableViewDelegate, UITableViewDataSour
         // セルを取得
         let cell = tableView.dequeueReusableCellWithIdentifier("QuestionPostCell") as! MyQuestionListTableViewCell
         
-        print(indexPath.row)
-        print(sampleQuestionList[indexPath.row].questionerName)
-        
         // セルに値を設定
         cell.setCell(sampleQuestionList[indexPath.row])
         
         return cell
     }
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-//        performSegueWithIdentifier("toQuestionDetailVC", sender: nil)
+        selectedQuestion = sampleQuestionList[indexPath.row]
+        performSegueWithIdentifier("toQuestionDetailVC", sender: nil)
     }
     
     
