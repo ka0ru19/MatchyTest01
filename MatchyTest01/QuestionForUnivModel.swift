@@ -15,6 +15,9 @@ class QuestionForUnivModel {
     var questionerIconNSData: NSData!
     var questionerIconName: String!
     var questionerIconImage: UIImage!
+    var questionPostDateText: String!
+    var questionPostDate: NSDate!
+    var questionTitle: String!
     var questionText: String!
     
     var isQuestionAnswerd: Bool = false // Respondent次第

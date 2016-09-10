@@ -21,7 +21,7 @@ class MyQuestionDetailViewController: UIViewController {
         questionDetailTableView.registerNib(UINib(nibName: "QuestionDetailForHighSchTableViewCell", bundle: nil), forCellReuseIdentifier: "QuestionDetailCell")
         questionDetailTableView.registerNib(UINib(nibName: "AnswerForHighSchTableViewCell", bundle: nil), forCellReuseIdentifier: "AnswerCell")
         
-        questionDetailTableView.estimatedRowHeight = 300 //CGFloat.max
+        questionDetailTableView.estimatedRowHeight = 2000 //CGFloat.max
         questionDetailTableView.rowHeight = UITableViewAutomaticDimension
         
     }

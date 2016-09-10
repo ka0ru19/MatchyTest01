@@ -21,6 +21,8 @@ class MyQuestionListViewController: UIViewController {
         
         myQuestionListTableView.delegate = self
         myQuestionListTableView.dataSource = self
+        myQuestionListTableView.registerNib(UINib(nibName: "MyQuestionListTableViewCell", bundle: nil), forCellReuseIdentifier: "QuestionPostCell")
+        
     }
     
     override func viewWillAppear(animated: Bool) {

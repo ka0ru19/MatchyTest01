@@ -21,14 +21,14 @@
                                 <rect key="frame" x="110" y="250" width="101" height="30"/>
                                 <state key="normal" title="UniversityUser"/>
                                 <connections>
-                                    <action selector="onTappedUniv:" destination="fB5-qI-lOr" eventType="touchUpInside" id="yvw-MX-Tct"/>
+                                    <segue destination="EQ4-ZD-a5e" kind="modal" id="UQy-25-SVO"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="79K-RC-Wa7">
                                 <rect key="frame" x="104" y="288" width="112" height="30"/>
                                 <state key="normal" title="HighSchoolUser"/>
                                 <connections>
-                                    <action selector="onTappedHiSch:" destination="fB5-qI-lOr" eventType="touchUpInside" id="3DT-PX-Wb3"/>
+                                    <segue destination="HuD-yL-7Rr" kind="modal" id="pYL-9l-kMX"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -38,6 +38,24 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VHO-q9-TJ8" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="276" y="556"/>
+        </scene>
+        <!--UnivTab-->
+        <scene sceneID="NJI-IN-SHT">
+            <objects>
+                <viewControllerPlaceholder storyboardName="UnivTab" id="EQ4-ZD-a5e" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="hRn-7P-Lha"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="1Wr-gu-YYj" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="624.5" y="530"/>
+        </scene>
+        <!--HighSchTab-->
+        <scene sceneID="SPx-zU-pSM">
+            <objects>
+                <viewControllerPlaceholder storyboardName="HighSchTab" id="HuD-yL-7Rr" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="uZT-cP-kl7" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="624" y="582"/>
         </scene>
     </scenes>
 </document>

@@ -18,9 +18,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         print("didFinishLaunchingWithOptions")
         
         /* ここからStoryboardHelper */
-        let storyboard: UIStoryboard = StoryboardHelper.adjustMain()
-        window!.rootViewController = storyboard.instantiateInitialViewController()! as UIViewController
-        self.window?.makeKeyAndVisible()
+//        let storyboard: UIStoryboard = StoryboardHelper.adjustMain()
+//        window!.rootViewController = storyboard.instantiateInitialViewController()! as UIViewController
+//        self.window?.makeKeyAndVisible()
         /* ここまでStoryboardHelper */
         
         return true

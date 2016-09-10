@@ -9,17 +9,17 @@
 /* Begin PBXBuildFile section */
 		633ABBF21D6F1A2F004819D1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 633ABBF11D6F1A2F004819D1 /* AppDelegate.swift */; };
 		633ABBF41D6F1A2F004819D1 /* TopBranchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 633ABBF31D6F1A2F004819D1 /* TopBranchViewController.swift */; };
-		633ABBF71D6F1A2F004819D1 /* Top-Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 633ABBF51D6F1A2F004819D1 /* Top-Main.storyboard */; };
+		633ABBF71D6F1A2F004819D1 /* TopBranch.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 633ABBF51D6F1A2F004819D1 /* TopBranch.storyboard */; };
 		633ABBF91D6F1A2F004819D1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 633ABBF81D6F1A2F004819D1 /* Assets.xcassets */; };
 		633ABC071D6F1A2F004819D1 /* MatchyTest01Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 633ABC061D6F1A2F004819D1 /* MatchyTest01Tests.swift */; };
 		633ABC121D6F1A2F004819D1 /* MatchyTest01UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 633ABC111D6F1A2F004819D1 /* MatchyTest01UITests.swift */; };
 		6348810F1D7A514900038261 /* UnivMyPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6348810E1D7A514900038261 /* UnivMyPageViewController.swift */; };
-		634881111D7A520600038261 /* UnivUser-Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 634881101D7A520600038261 /* UnivUser-Main.storyboard */; };
+		634881111D7A520600038261 /* UnivTab.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 634881101D7A520600038261 /* UnivTab.storyboard */; };
 		634881161D7A578800038261 /* tab_mypage_T.png in Resources */ = {isa = PBXBuildFile; fileRef = 634881121D7A578800038261 /* tab_mypage_T.png */; };
 		634881171D7A578800038261 /* tab_mypage_F.png in Resources */ = {isa = PBXBuildFile; fileRef = 634881131D7A578800038261 /* tab_mypage_F.png */; };
 		634881181D7A578800038261 /* tab_newrequest_T.png in Resources */ = {isa = PBXBuildFile; fileRef = 634881141D7A578800038261 /* tab_newrequest_T.png */; };
 		634881191D7A578800038261 /* tab_newrequest_F.png in Resources */ = {isa = PBXBuildFile; fileRef = 634881151D7A578800038261 /* tab_newrequest_F.png */; };
-		6348811D1D7A7E6600038261 /* QuestionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6348811C1D7A7E6600038261 /* QuestionViewController.swift */; };
+		6348811D1D7A7E6600038261 /* QuestionListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6348811C1D7A7E6600038261 /* QuestionListViewController.swift */; };
 		634881271D7A7FA800038261 /* aguri.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 6348811F1D7A7FA800038261 /* aguri.jpg */; };
 		634881281D7A7FA800038261 /* daifuku1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 634881201D7A7FA800038261 /* daifuku1.jpg */; };
 		634881291D7A7FA800038261 /* honami1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 634881211D7A7FA800038261 /* honami1.jpg */; };
@@ -29,7 +29,7 @@
 		6348812D1D7A7FA800038261 /* monkey01.png in Resources */ = {isa = PBXBuildFile; fileRef = 634881251D7A7FA800038261 /* monkey01.png */; };
 		6348812E1D7A7FA800038261 /* saki1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 634881261D7A7FA800038261 /* saki1.jpg */; };
 		634881301D7A834A00038261 /* UnivFollowerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6348812F1D7A834A00038261 /* UnivFollowerTableViewCell.swift */; };
-		634881321D7A992500038261 /* QuestionPostTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 634881311D7A992500038261 /* QuestionPostTableViewCell.swift */; };
+		634881321D7A992500038261 /* QuestionListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 634881311D7A992500038261 /* QuestionListTableViewCell.swift */; };
 		634881341D7AA88000038261 /* QuestionDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 634881331D7AA88000038261 /* QuestionDetailViewController.swift */; };
 		634881381D7AFB7C00038261 /* AnswerInputViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 634881371D7AFB7C00038261 /* AnswerInputViewController.swift */; };
 		6348814A1D7D427200038261 /* UnivTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 634881491D7D427200038261 /* UnivTabBarController.swift */; };
@@ -56,7 +56,7 @@
 		634881731D7E9A6900038261 /* QuestionForUnivModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 634881701D7E9A6900038261 /* QuestionForUnivModel.swift */; };
 		63D26F7A1D804B0000FEE093 /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63D26F791D804AFF00FEE093 /* String+Extension.swift */; };
 		63D26F7C1D804DC500FEE093 /* NSTimeInterval+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63D26F7B1D804DC500FEE093 /* NSTimeInterval+Extension.swift */; };
-		63D26F821D80EBB200FEE093 /* HighSchUser-Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 63D26F811D80EBB200FEE093 /* HighSchUser-Main.storyboard */; };
+		63D26F821D80EBB200FEE093 /* HighSchTab.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 63D26F811D80EBB200FEE093 /* HighSchTab.storyboard */; };
 		63D26F861D81929200FEE093 /* MyQuestionListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63D26F851D81929200FEE093 /* MyQuestionListViewController.swift */; };
 		63D26F891D81940200FEE093 /* MyQuestionListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63D26F871D81940200FEE093 /* MyQuestionListTableViewCell.swift */; };
 		63D26F8C1D819AD400FEE093 /* RespondentModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63D26F8B1D819AD400FEE093 /* RespondentModel.swift */; };
@@ -76,6 +76,8 @@
 		63D26FAC1D82641000FEE093 /* MyQuestionDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63D26FAB1D82641000FEE093 /* MyQuestionDetailViewController.swift */; };
 		63D26FAF1D827FAF00FEE093 /* AnswerForHighSchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63D26FAD1D827FAF00FEE093 /* AnswerForHighSchTableViewCell.swift */; };
 		63D26FB01D827FAF00FEE093 /* AnswerForHighSchTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 63D26FAE1D827FAF00FEE093 /* AnswerForHighSchTableViewCell.xib */; };
+		63D26FB21D8313C000FEE093 /* MyQuestionListTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 63D26FB11D8313C000FEE093 /* MyQuestionListTableViewCell.xib */; };
+		63D26FB71D843A9100FEE093 /* QuestionListTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 63D26FB61D843A9100FEE093 /* QuestionListTableViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -99,7 +101,7 @@
 		633ABBEE1D6F1A2F004819D1 /* MatchyTest01.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MatchyTest01.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		633ABBF11D6F1A2F004819D1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		633ABBF31D6F1A2F004819D1 /* TopBranchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopBranchViewController.swift; sourceTree = "<group>"; };
-		633ABBF61D6F1A2F004819D1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = "Base.lproj/Top-Main.storyboard"; sourceTree = "<group>"; };
+		633ABBF61D6F1A2F004819D1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/TopBranch.storyboard; sourceTree = "<group>"; };
 		633ABBF81D6F1A2F004819D1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		633ABBFD1D6F1A2F004819D1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		633ABC021D6F1A2F004819D1 /* MatchyTest01Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MatchyTest01Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -109,12 +111,12 @@
 		633ABC111D6F1A2F004819D1 /* MatchyTest01UITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchyTest01UITests.swift; sourceTree = "<group>"; };
 		633ABC131D6F1A2F004819D1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6348810E1D7A514900038261 /* UnivMyPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UnivMyPageViewController.swift; sourceTree = "<group>"; };
-		634881101D7A520600038261 /* UnivUser-Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = "UnivUser-Main.storyboard"; sourceTree = "<group>"; };
+		634881101D7A520600038261 /* UnivTab.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = UnivTab.storyboard; sourceTree = "<group>"; };
 		634881121D7A578800038261 /* tab_mypage_T.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tab_mypage_T.png; sourceTree = "<group>"; };
 		634881131D7A578800038261 /* tab_mypage_F.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tab_mypage_F.png; sourceTree = "<group>"; };
 		634881141D7A578800038261 /* tab_newrequest_T.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tab_newrequest_T.png; sourceTree = "<group>"; };
 		634881151D7A578800038261 /* tab_newrequest_F.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tab_newrequest_F.png; sourceTree = "<group>"; };
-		6348811C1D7A7E6600038261 /* QuestionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuestionViewController.swift; sourceTree = "<group>"; };
+		6348811C1D7A7E6600038261 /* QuestionListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuestionListViewController.swift; sourceTree = "<group>"; };
 		6348811F1D7A7FA800038261 /* aguri.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = aguri.jpg; sourceTree = "<group>"; };
 		634881201D7A7FA800038261 /* daifuku1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = daifuku1.jpg; sourceTree = "<group>"; };
 		634881211D7A7FA800038261 /* honami1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = honami1.jpg; sourceTree = "<group>"; };
@@ -124,7 +126,7 @@
 		634881251D7A7FA800038261 /* monkey01.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = monkey01.png; sourceTree = "<group>"; };
 		634881261D7A7FA800038261 /* saki1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = saki1.jpg; sourceTree = "<group>"; };
 		6348812F1D7A834A00038261 /* UnivFollowerTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UnivFollowerTableViewCell.swift; sourceTree = "<group>"; };
-		634881311D7A992500038261 /* QuestionPostTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuestionPostTableViewCell.swift; sourceTree = "<group>"; };
+		634881311D7A992500038261 /* QuestionListTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuestionListTableViewCell.swift; sourceTree = "<group>"; };
 		634881331D7AA88000038261 /* QuestionDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuestionDetailViewController.swift; sourceTree = "<group>"; };
 		634881371D7AFB7C00038261 /* AnswerInputViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnswerInputViewController.swift; sourceTree = "<group>"; };
 		634881491D7D427200038261 /* UnivTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UnivTabBarController.swift; sourceTree = "<group>"; };
@@ -139,7 +141,7 @@
 		634881701D7E9A6900038261 /* QuestionForUnivModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuestionForUnivModel.swift; sourceTree = "<group>"; };
 		63D26F791D804AFF00FEE093 /* String+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Extension.swift"; sourceTree = "<group>"; };
 		63D26F7B1D804DC500FEE093 /* NSTimeInterval+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSTimeInterval+Extension.swift"; sourceTree = "<group>"; };
-		63D26F811D80EBB200FEE093 /* HighSchUser-Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = "HighSchUser-Main.storyboard"; sourceTree = "<group>"; };
+		63D26F811D80EBB200FEE093 /* HighSchTab.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = HighSchTab.storyboard; sourceTree = "<group>"; };
 		63D26F851D81929200FEE093 /* MyQuestionListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyQuestionListViewController.swift; sourceTree = "<group>"; };
 		63D26F871D81940200FEE093 /* MyQuestionListTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyQuestionListTableViewCell.swift; sourceTree = "<group>"; };
 		63D26F8B1D819AD400FEE093 /* RespondentModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RespondentModel.swift; sourceTree = "<group>"; };
@@ -159,6 +161,8 @@
 		63D26FAB1D82641000FEE093 /* MyQuestionDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyQuestionDetailViewController.swift; sourceTree = "<group>"; };
 		63D26FAD1D827FAF00FEE093 /* AnswerForHighSchTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnswerForHighSchTableViewCell.swift; sourceTree = "<group>"; };
 		63D26FAE1D827FAF00FEE093 /* AnswerForHighSchTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AnswerForHighSchTableViewCell.xib; sourceTree = "<group>"; };
+		63D26FB11D8313C000FEE093 /* MyQuestionListTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MyQuestionListTableViewCell.xib; sourceTree = "<group>"; };
+		63D26FB61D843A9100FEE093 /* QuestionListTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = QuestionListTableViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -212,7 +216,7 @@
 			children = (
 				633ABBF11D6F1A2F004819D1 /* AppDelegate.swift */,
 				633ABBF31D6F1A2F004819D1 /* TopBranchViewController.swift */,
-				633ABBF51D6F1A2F004819D1 /* Top-Main.storyboard */,
+				633ABBF51D6F1A2F004819D1 /* TopBranch.storyboard */,
 				6348816B1D7D787500038261 /* MatchyColor.swift */,
 				6348816F1D7E887C00038261 /* UniversityView */,
 				63D26F801D80EB0000FEE093 /* HighSchoolView */,
@@ -296,9 +300,9 @@
 			isa = PBXGroup;
 			children = (
 				634881491D7D427200038261 /* UnivTabBarController.swift */,
-				63D26F7F1D80EA9400FEE093 /* QuestionView */,
+				634881101D7A520600038261 /* UnivTab.storyboard */,
+				63D26F7F1D80EA9400FEE093 /* QuestionListView */,
 				63D26F7E1D80EA6E00FEE093 /* MyPageView */,
-				634881101D7A520600038261 /* UnivUser-Main.storyboard */,
 			);
 			name = UniversityView;
 			sourceTree = "<group>";
@@ -321,17 +325,18 @@
 			name = MyPageView;
 			sourceTree = "<group>";
 		};
-		63D26F7F1D80EA9400FEE093 /* QuestionView */ = {
+		63D26F7F1D80EA9400FEE093 /* QuestionListView */ = {
 			isa = PBXGroup;
 			children = (
 				634881701D7E9A6900038261 /* QuestionForUnivModel.swift */,
-				6348811C1D7A7E6600038261 /* QuestionViewController.swift */,
-				634881311D7A992500038261 /* QuestionPostTableViewCell.swift */,
+				6348811C1D7A7E6600038261 /* QuestionListViewController.swift */,
+				634881311D7A992500038261 /* QuestionListTableViewCell.swift */,
+				63D26FB61D843A9100FEE093 /* QuestionListTableViewCell.xib */,
 				634881331D7AA88000038261 /* QuestionDetailViewController.swift */,
 				634881371D7AFB7C00038261 /* AnswerInputViewController.swift */,
 				634881671D7D5B0700038261 /* AnswerConfirmViewController.swift */,
 			);
-			name = QuestionView;
+			name = QuestionListView;
 			sourceTree = "<group>";
 		};
 		63D26F801D80EB0000FEE093 /* HighSchoolView */ = {
@@ -339,14 +344,9 @@
 			children = (
 				63D26F8D1D819B0500FEE093 /* QuestionForHighSchModel.swift */,
 				63D26F8B1D819AD400FEE093 /* RespondentModel.swift */,
-				63D26F851D81929200FEE093 /* MyQuestionListViewController.swift */,
-				63D26F871D81940200FEE093 /* MyQuestionListTableViewCell.swift */,
-				63D26FAB1D82641000FEE093 /* MyQuestionDetailViewController.swift */,
-				63D26FA51D8233FE00FEE093 /* QuestionDetailForHighSchTableViewCell.swift */,
-				63D26FA61D8233FE00FEE093 /* QuestionDetailForHighSchTableViewCell.xib */,
-				63D26FAD1D827FAF00FEE093 /* AnswerForHighSchTableViewCell.swift */,
-				63D26FAE1D827FAF00FEE093 /* AnswerForHighSchTableViewCell.xib */,
-				63D26F811D80EBB200FEE093 /* HighSchUser-Main.storyboard */,
+				63D26F811D80EBB200FEE093 /* HighSchTab.storyboard */,
+				63D26FB41D842DC000FEE093 /* MyQuestionListView */,
+				63D26FB31D842D9600FEE093 /* MyQuestionDetailView */,
 			);
 			name = HighSchoolView;
 			sourceTree = "<group>";
@@ -381,6 +381,28 @@
 				63D26FA01D81A0E900FEE093 /* rat.jpeg */,
 			);
 			name = HighSch;
+			sourceTree = "<group>";
+		};
+		63D26FB31D842D9600FEE093 /* MyQuestionDetailView */ = {
+			isa = PBXGroup;
+			children = (
+				63D26FAB1D82641000FEE093 /* MyQuestionDetailViewController.swift */,
+				63D26FA51D8233FE00FEE093 /* QuestionDetailForHighSchTableViewCell.swift */,
+				63D26FA61D8233FE00FEE093 /* QuestionDetailForHighSchTableViewCell.xib */,
+				63D26FAD1D827FAF00FEE093 /* AnswerForHighSchTableViewCell.swift */,
+				63D26FAE1D827FAF00FEE093 /* AnswerForHighSchTableViewCell.xib */,
+			);
+			name = MyQuestionDetailView;
+			sourceTree = "<group>";
+		};
+		63D26FB41D842DC000FEE093 /* MyQuestionListView */ = {
+			isa = PBXGroup;
+			children = (
+				63D26F851D81929200FEE093 /* MyQuestionListViewController.swift */,
+				63D26F871D81940200FEE093 /* MyQuestionListTableViewCell.swift */,
+				63D26FB11D8313C000FEE093 /* MyQuestionListTableViewCell.xib */,
+			);
+			name = MyQuestionListView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -505,20 +527,22 @@
 				6348812A1D7A7FA800038261 /* horse01.png in Resources */,
 				63D26F951D819F9800FEE093 /* kasumin.jpg in Resources */,
 				634881561D7D441700038261 /* Default-568h@2x.png in Resources */,
-				63D26F821D80EBB200FEE093 /* HighSchUser-Main.storyboard in Resources */,
+				63D26F821D80EBB200FEE093 /* HighSchTab.storyboard in Resources */,
 				63D26FA21D81A0E900FEE093 /* dog.jpeg in Resources */,
 				634881161D7A578800038261 /* tab_mypage_T.png in Resources */,
 				6348815C1D7D441700038261 /* Default-736h@3x.png in Resources */,
 				633ABBF91D6F1A2F004819D1 /* Assets.xcassets in Resources */,
 				63D26F971D819F9800FEE093 /* shinoki.jpg in Resources */,
-				633ABBF71D6F1A2F004819D1 /* Top-Main.storyboard in Resources */,
+				633ABBF71D6F1A2F004819D1 /* TopBranch.storyboard in Resources */,
 				634881191D7A578800038261 /* tab_newrequest_F.png in Resources */,
+				63D26FB21D8313C000FEE093 /* MyQuestionListTableViewCell.xib in Resources */,
 				634881591D7D441700038261 /* Default-667h@2x.png in Resources */,
 				63D26FA11D81A0E900FEE093 /* penguin.jpeg in Resources */,
 				634881181D7A578800038261 /* tab_newrequest_T.png in Resources */,
 				63D26F991D819F9800FEE093 /* kiyo.jpg in Resources */,
 				6348812B1D7A7FA800038261 /* inocci.png in Resources */,
-				634881111D7A520600038261 /* UnivUser-Main.storyboard in Resources */,
+				63D26FB71D843A9100FEE093 /* QuestionListTableViewCell.xib in Resources */,
+				634881111D7A520600038261 /* UnivTab.storyboard in Resources */,
 				63D26FA31D81A0E900FEE093 /* panda.jpeg in Resources */,
 				63D26FB01D827FAF00FEE093 /* AnswerForHighSchTableViewCell.xib in Resources */,
 				634881291D7A7FA800038261 /* honami1.jpg in Resources */,
@@ -560,14 +584,14 @@
 				63D26FAC1D82641000FEE093 /* MyQuestionDetailViewController.swift in Sources */,
 				6348815F1D7D441700038261 /* README.md in Sources */,
 				633ABBF41D6F1A2F004819D1 /* TopBranchViewController.swift in Sources */,
-				6348811D1D7A7E6600038261 /* QuestionViewController.swift in Sources */,
+				6348811D1D7A7E6600038261 /* QuestionListViewController.swift in Sources */,
 				634881341D7AA88000038261 /* QuestionDetailViewController.swift in Sources */,
 				63D26FAF1D827FAF00FEE093 /* AnswerForHighSchTableViewCell.swift in Sources */,
 				63D26F7C1D804DC500FEE093 /* NSTimeInterval+Extension.swift in Sources */,
 				634881621D7D441700038261 /* StoryboardHelper.swift in Sources */,
 				634881711D7E9A6900038261 /* QuestionForUnivModel.swift in Sources */,
 				634881681D7D5B0700038261 /* AnswerConfirmViewController.swift in Sources */,
-				634881321D7A992500038261 /* QuestionPostTableViewCell.swift in Sources */,
+				634881321D7A992500038261 /* QuestionListTableViewCell.swift in Sources */,
 				633ABBF21D6F1A2F004819D1 /* AppDelegate.swift in Sources */,
 				63D26FA71D8233FE00FEE093 /* QuestionDetailForHighSchTableViewCell.swift in Sources */,
 				63D26F8C1D819AD400FEE093 /* RespondentModel.swift in Sources */,
@@ -616,12 +640,12 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		633ABBF51D6F1A2F004819D1 /* Top-Main.storyboard */ = {
+		633ABBF51D6F1A2F004819D1 /* TopBranch.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				633ABBF61D6F1A2F004819D1 /* Base */,
 			);
-			name = "Top-Main.storyboard";
+			name = TopBranch.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */

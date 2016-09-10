@@ -72,6 +72,7 @@ extension MyQuestionListTableViewCell {
         questionDetailLabel.numberOfLines = 3
         questionDetailLabel.lineBreakMode = .ByCharWrapping
         questionDetailLabel.font = UIFont.systemFontOfSize(CGFloat(13))
+        
 //        questionOptionButton
         
         answerRewardLabel.textAlignment = .Right

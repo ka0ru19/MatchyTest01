@@ -22,21 +22,21 @@ class TopBranchViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
-    @IBAction func onTappedUniv(sender: UIButton) {
-        // 画面遷移
-        let storyboard: UIStoryboard =  UIStoryboard(name: "UnivUser-Main",bundle:nil)
-        var nextVC: UITabBarController //UIViewController!
-        nextVC = storyboard.instantiateViewControllerWithIdentifier("UnivStoryBoardTop") as! UITabBarController
-        self.presentViewController(nextVC, animated: true, completion: nil)
-    }
-    
-    @IBAction func onTappedHiSch(sender: UIButton) {
-        // 画面遷移
-        let storyboard: UIStoryboard =  UIStoryboard(name: "HighSchUser-Main",bundle:nil)
-        var nextVC: UITabBarController //UIViewController!
-        nextVC = storyboard.instantiateViewControllerWithIdentifier("HighSchStoryBoardTop") as! UITabBarController
-        self.presentViewController(nextVC, animated: true, completion: nil)
-    }
+//    @IBAction func onTappedUniv(sender: UIButton) {
+//        // 画面遷移
+//        let storyboard: UIStoryboard =  UIStoryboard(name: "UnivUser-Main",bundle:nil)
+//        var nextVC: UITabBarController //UIViewController!
+//        nextVC = storyboard.instantiateViewControllerWithIdentifier("UnivStoryBoardTop") as! UITabBarController
+//        self.presentViewController(nextVC, animated: true, completion: nil)
+//    }
+//    
+//    @IBAction func onTappedHiSch(sender: UIButton) {
+//        // 画面遷移
+//        let storyboard: UIStoryboard =  UIStoryboard(name: "HighSchUser-Main",bundle:nil)
+//        var nextVC: UITabBarController //UIViewController!
+//        nextVC = storyboard.instantiateViewControllerWithIdentifier("HighSchStoryBoardTop") as! UITabBarController
+//        self.presentViewController(nextVC, animated: true, completion: nil)
+//    }
 
 }
 

@@ -8,7 +8,7 @@
 
 import UIKit
 
-class QuestionViewController: UIViewController {
+class QuestionListViewController: UIViewController {
     
     @IBOutlet weak var questionTableView: UITableView!
     
@@ -26,6 +26,8 @@ class QuestionViewController: UIViewController {
                                 "saki1.jpg",
                                 "honami1.jpg"]
     
+    let postTitleArray = ["title001","title002","title003","title004","title005","title006","title007","title008","title009"]
+    
     let postArray = ["question001",
                      "question002question002",
                      "question003question003question003",
@@ -36,15 +38,26 @@ class QuestionViewController: UIViewController {
                      "question008question008question008question008\nquestion008\nquestion008",
                      "question009question009question009question009\nquestion009\nquestion009question009\nquestion009\nquestion009question009\nquestion009\nquestion009question009\nquestion009\nquestion009question009\nquestion009\nquestion009question009\nquestion009\nquestion009question009\nquestion009\nquestion009question009\nquestion009\nquestion009question009\nquestion009\nquestion009question009\nquestion009\nquestion009question009\nquestion009\nquestion009question009\nquestion009\nquestion009question009"]
     
-    let answerDeadlineArray = ["2016/9/7 20:11",
-                               "2016/9/8 20:13",
-                               "2016/9/8 23:41",
-                               "2016/9/9 0:01",
-                               "2016/9/9 2:51",
-                               "2016/9/9 12:19",
-                               "2016/9/9 20:11",
-                               "2016/9/10 20:14",
-                               "2016/9/11 20:21"] // 日本時間
+    let sampleQuestionPostDateArray = ["2016/09/08 22:49",
+                                       "2016/09/07 1:39",
+                                       "2016/09/06 5:40",
+                                       "2016/09/05 19:44",
+                                       "2016/09/04 14:19",
+                                       "2016/09/03 20:09",
+                                       "2016/09/03 19:44",
+                                       "2016/09/03 14:19",
+                                       "2016/09/03 2:09"
+    ]
+    
+    let answerDeadlineArray = ["2016/9/17 20:11",
+                               "2016/9/16 20:13",
+                               "2016/9/16 23:41",
+                               "2016/9/15 20:01",
+                               "2016/9/15 12:51",
+                               "2016/9/15 12:19",
+                               "2016/9/14 20:11",
+                               "2016/9/4 20:14",
+                               "2016/9/3 20:21"] // 日本時間
     
     let isAsweredArray = [true,false,true,true,false,true,false,false,true]
     
@@ -53,12 +66,15 @@ class QuestionViewController: UIViewController {
         
         questionTableView.delegate = self
         questionTableView.dataSource = self
-        
-        loadFirstQuestionList()
-        
+        questionTableView.registerNib(UINib(nibName: "QuestionListTableViewCell", bundle: nil), forCellReuseIdentifier: "QuestionListCell")
+        questionTableView.estimatedRowHeight = 2000 //CGFloat.max
+        questionTableView.rowHeight = UITableViewAutomaticDimension
+
     }
     
     override func viewWillAppear(animated: Bool) {
+        loadFirstQuestionList()
+        
         questionTableView.reloadData()
     }
     override func didReceiveMemoryWarning() {
@@ -74,8 +90,10 @@ class QuestionViewController: UIViewController {
             question.questionerIconNSData =
                 UIImageJPEGRepresentation(UIImage(named: personImageNameArray[i])!, 0.3)
             question.questionerIconName = personImageNameArray[i]
+            question.questionTitle = postTitleArray[i]
             question.questionText = postArray[i]
             question.isQuestionAnswerd = isAsweredArray[i]
+            question.questionPostDateText = sampleQuestionPostDateArray[i]
             question.answerDeadlineText = answerDeadlineArray[i]
             question.answerReward = String(123 * i)
             questionList.append(question)
@@ -99,13 +117,13 @@ class QuestionViewController: UIViewController {
 }
 
 // 任意のquestionをtableviewから削除するのに使う
-extension QuestionViewController: RemoveSelectedQuestionDelegate /*onTappedAnswerRefuseOK*/ {
+extension QuestionListViewController: RemoveSelectedQuestionDelegate /*onTappedAnswerRefuseOK*/ {
     func removeSelectedQuestion(index: Int) {
         questionList.removeAtIndex(index)
     }
 }
 
-extension QuestionViewController: UITableViewDelegate, UITableViewDataSource {
+extension QuestionListViewController: UITableViewDelegate, UITableViewDataSource {
     // セルの個数を指定するデリゲートメソッド（必須）
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return questionList.count
@@ -114,7 +132,7 @@ extension QuestionViewController: UITableViewDelegate, UITableViewDataSource {
     // セルに値を設定するデータソースメソッド（必須）
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         // セルを取得
-        let cell = tableView.dequeueReusableCellWithIdentifier("QuestionPostCell") as! QuestionPostTableViewCell
+        let cell = tableView.dequeueReusableCellWithIdentifier("QuestionListCell") as! QuestionListTableViewCell
         
         print(indexPath.row)
         print(questionList[indexPath.row].questionerName)

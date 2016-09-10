@@ -33,32 +33,12 @@ class AnswerForHighSchTableViewCell: UITableViewCell {
         dateLabel.textColor = UIColor.darkGrayColor()
         dateLabel.textAlignment = .Right
         
-//        let fixedWidth = answerTextView.frame.size.width
-//        let newSize = answerTextView.sizeThatFits(CGSizeMake(fixedWidth, CGFloat.max))
-//        var newFrame = answerTextView.frame
-//        newFrame.size = CGSizeMake(max(newSize.width, fixedWidth), newSize.height)
-//        print(newFrame)
-//        answerTextView.frame = newFrame
-//        answerTextView.font = UIFont.systemFontOfSize(CGFloat(14))
-        
-        print(respondent.iconName)
         iconImageView.image = UIImage(data: respondent.iconNSData)
         nameLabel.text = respondent.name
         
-        answerTextView.backgroundColor = UIColor.cyanColor()
-        
         if respondent.answerText == "" {
-            dateLabel.text = "未回答です"
+            dateLabel.text = "未回答"
             answerTextView.hidden = true
-            
-//            let fixedWidth = answerTextView.frame.size.width
-//            let newSize = answerTextView.sizeThatFits(CGSizeMake(fixedWidth, CGFloat.max))
-//            var newFrame = answerTextView.frame
-//            newFrame.size = CGSizeMake(max(newSize.width, fixedWidth), 1)
-//            print(newFrame)
-//            answerTextView.frame = newFrame
-//            answerTextView.font = UIFont.systemFontOfSize(CGFloat(14))
-
             
         } else {
             let fixedWidth = answerTextView.frame.size.width
@@ -68,10 +48,10 @@ class AnswerForHighSchTableViewCell: UITableViewCell {
             print(newFrame)
             answerTextView.frame = newFrame
             answerTextView.font = UIFont.systemFontOfSize(CGFloat(14))
-            
-            dateLabel.text = respondent.answerDateText
+            answerTextView.backgroundColor = UIColor.cyanColor()
             answerTextView.hidden = false
             answerTextView.text = respondent.answerText
+            dateLabel.text = respondent.answerDateText
         }
         
         
