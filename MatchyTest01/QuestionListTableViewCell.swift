@@ -53,7 +53,7 @@ class QuestionListTableViewCell: UITableViewCell {
             question.questionText.stringByReplacingOccurrencesOfString("\n", withString: " ")
         iconImageView.image = UIImage(data: question.questionerIconNSData)
         nameLabel.text = question.questionerName
-        postDateLabel.text = question.questionPostDateText
+        postDateLabel.text = question.questionPostDateText.changeDateStringToYMDString()
         titleLabel.text = question.questionTitle
         detailLabel.text = "私の質問は\(questionTextWithoutNewParagraph)です。"
         

@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="sZz-6e-dth">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+    </dependencies>
+    <scenes>
+        <!--検索-->
+        <scene sceneID="foe-Yl-bed">
+            <objects>
+                <viewController id="74c-nz-6Td" customClass="SearchListViewController" customModule="MatchyTest01" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="ayd-5w-o08"/>
+                        <viewControllerLayoutGuide type="bottom" id="zsZ-7e-mPC"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="TLg-Dp-pQu">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="XLJ-8g-orW">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="検索" id="95e-ui-vwe"/>
+                    <connections>
+                        <outlet property="searchDisplayController" destination="Ghc-v7-4kG" id="jbt-2g-mWM"/>
+                        <outlet property="searchListTableView" destination="XLJ-8g-orW" id="dHh-Yd-GoX"/>
+                        <segue destination="smH-qV-Uec" kind="push" identifier="toSearchSelectVC" id="5ke-Ek-gtL"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="EHP-C8-7av" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <searchDisplayController id="Ghc-v7-4kG">
+                    <connections>
+                        <outlet property="delegate" destination="74c-nz-6Td" id="yE7-Ep-VUH"/>
+                        <outlet property="searchContentsController" destination="74c-nz-6Td" id="DbY-yg-p1h"/>
+                        <outlet property="searchResultsDataSource" destination="74c-nz-6Td" id="J0U-po-6tQ"/>
+                        <outlet property="searchResultsDelegate" destination="74c-nz-6Td" id="uHc-Cq-vKl"/>
+                    </connections>
+                </searchDisplayController>
+            </objects>
+            <point key="canvasLocation" x="998" y="-10"/>
+        </scene>
+        <!--Search Select View Controller-->
+        <scene sceneID="ZNY-D2-rRe">
+            <objects>
+                <viewController id="smH-qV-Uec" customClass="SearchSelectViewController" customModule="MatchyTest01" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="I4f-Cd-Fme"/>
+                        <viewControllerLayoutGuide type="bottom" id="FJT-R4-p1z"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="KQe-Tp-wIO">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="asO-iG-cyX">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="cCn-Fk-VVy"/>
+                    <connections>
+                        <outlet property="searchSelectTableView" destination="asO-iG-cyX" id="nCS-Ly-qb9"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hT1-8B-HXi" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1482" y="-416"/>
+        </scene>
+        <!--検索-->
+        <scene sceneID="0z0-Co-FTo">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="sZz-6e-dth" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="検索" id="ttk-lC-cud"/>
+                    <toolbarItems/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Hg1-DJ-Dfm">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="74c-nz-6Td" kind="relationship" relationship="rootViewController" id="mXe-Xh-6LT"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ibd-qB-bHS" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="545" y="-10"/>
+        </scene>
+    </scenes>
+</document>

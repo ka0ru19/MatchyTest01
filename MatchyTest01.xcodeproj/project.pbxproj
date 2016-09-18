@@ -7,6 +7,17 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		63193FD71D8653C000E3F475 /* SearchSelectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63193FD61D8653C000E3F475 /* SearchSelectViewController.swift */; };
+		63193FDC1D8693BC00E3F475 /* SearchSelectTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63193FDA1D8693BC00E3F475 /* SearchSelectTableViewCell.swift */; };
+		63193FDD1D8693BC00E3F475 /* SearchSelectTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 63193FDB1D8693BC00E3F475 /* SearchSelectTableViewCell.xib */; };
+		63193FDF1D869C2300E3F475 /* SearchModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63193FDE1D869C2300E3F475 /* SearchModel.swift */; };
+		63302DBB1D8DC12F00F7BAA5 /* Authentication.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 63302DBA1D8DC12F00F7BAA5 /* Authentication.storyboard */; };
+		63302DBE1D8DC5CC00F7BAA5 /* signup-fb.png in Resources */ = {isa = PBXBuildFile; fileRef = 63302DBD1D8DC5CC00F7BAA5 /* signup-fb.png */; };
+		63302DC01D8ECFF800F7BAA5 /* Step1SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63302DBF1D8ECFF800F7BAA5 /* Step1SignUpViewController.swift */; };
+		63302DC21D8ED04000F7BAA5 /* Step2SetUserIDViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63302DC11D8ED04000F7BAA5 /* Step2SetUserIDViewController.swift */; };
+		63302DC41D8ED0C100F7BAA5 /* Step3AskUserInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63302DC31D8ED0C100F7BAA5 /* Step3AskUserInfoViewController.swift */; };
+		63302DC61D8ED11B00F7BAA5 /* SetUserUnivViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63302DC51D8ED11B00F7BAA5 /* SetUserUnivViewController.swift */; };
+		63302DC81D8ED14700F7BAA5 /* SetUnivUserSkillsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63302DC71D8ED14700F7BAA5 /* SetUnivUserSkillsViewController.swift */; };
 		633ABBF21D6F1A2F004819D1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 633ABBF11D6F1A2F004819D1 /* AppDelegate.swift */; };
 		633ABBF41D6F1A2F004819D1 /* TopBranchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 633ABBF31D6F1A2F004819D1 /* TopBranchViewController.swift */; };
 		633ABBF71D6F1A2F004819D1 /* TopBranch.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 633ABBF51D6F1A2F004819D1 /* TopBranch.storyboard */; };
@@ -71,13 +82,22 @@
 		63D26FA21D81A0E900FEE093 /* dog.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 63D26F9E1D81A0E900FEE093 /* dog.jpeg */; };
 		63D26FA31D81A0E900FEE093 /* panda.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 63D26F9F1D81A0E900FEE093 /* panda.jpeg */; };
 		63D26FA41D81A0E900FEE093 /* rat.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 63D26FA01D81A0E900FEE093 /* rat.jpeg */; };
-		63D26FA71D8233FE00FEE093 /* QuestionDetailForHighSchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63D26FA51D8233FE00FEE093 /* QuestionDetailForHighSchTableViewCell.swift */; };
-		63D26FA81D8233FE00FEE093 /* QuestionDetailForHighSchTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 63D26FA61D8233FE00FEE093 /* QuestionDetailForHighSchTableViewCell.xib */; };
+		63D26FA71D8233FE00FEE093 /* MyQuestionDetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63D26FA51D8233FE00FEE093 /* MyQuestionDetailTableViewCell.swift */; };
+		63D26FA81D8233FE00FEE093 /* MyQuestionDetailTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 63D26FA61D8233FE00FEE093 /* MyQuestionDetailTableViewCell.xib */; };
 		63D26FAC1D82641000FEE093 /* MyQuestionDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63D26FAB1D82641000FEE093 /* MyQuestionDetailViewController.swift */; };
 		63D26FAF1D827FAF00FEE093 /* AnswerForHighSchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63D26FAD1D827FAF00FEE093 /* AnswerForHighSchTableViewCell.swift */; };
 		63D26FB01D827FAF00FEE093 /* AnswerForHighSchTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 63D26FAE1D827FAF00FEE093 /* AnswerForHighSchTableViewCell.xib */; };
 		63D26FB21D8313C000FEE093 /* MyQuestionListTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 63D26FB11D8313C000FEE093 /* MyQuestionListTableViewCell.xib */; };
 		63D26FB71D843A9100FEE093 /* QuestionListTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 63D26FB61D843A9100FEE093 /* QuestionListTableViewCell.xib */; };
+		63D26FBC1D84DBDC00FEE093 /* UnivMyPage.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 63D26FBB1D84DBDC00FEE093 /* UnivMyPage.storyboard */; };
+		63D26FBE1D84DC9200FEE093 /* UnivQuestionList.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 63D26FBD1D84DC9200FEE093 /* UnivQuestionList.storyboard */; };
+		63D26FC41D84FA9000FEE093 /* MyQuestionList.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 63D26FC31D84FA9000FEE093 /* MyQuestionList.storyboard */; };
+		63D26FC61D85022500FEE093 /* SearchList.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 63D26FC51D85022500FEE093 /* SearchList.storyboard */; };
+		63D26FC81D85050400FEE093 /* SearchListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63D26FC71D85050400FEE093 /* SearchListViewController.swift */; };
+		63D26FCA1D854C9E00FEE093 /* SearchListSelectedTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63D26FC91D854C9D00FEE093 /* SearchListSelectedTableViewCell.swift */; };
+		63D26FCC1D854CC700FEE093 /* SearchListSelectedTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 63D26FCB1D854CC700FEE093 /* SearchListSelectedTableViewCell.xib */; };
+		63D26FCF1D85540800FEE093 /* SearchTextTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63D26FCD1D85540800FEE093 /* SearchTextTableViewCell.swift */; };
+		63D26FD01D85540800FEE093 /* SearchTextTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 63D26FCE1D85540800FEE093 /* SearchTextTableViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -98,6 +118,17 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		63193FD61D8653C000E3F475 /* SearchSelectViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchSelectViewController.swift; sourceTree = "<group>"; };
+		63193FDA1D8693BC00E3F475 /* SearchSelectTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchSelectTableViewCell.swift; sourceTree = "<group>"; };
+		63193FDB1D8693BC00E3F475 /* SearchSelectTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SearchSelectTableViewCell.xib; sourceTree = "<group>"; };
+		63193FDE1D869C2300E3F475 /* SearchModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchModel.swift; sourceTree = "<group>"; };
+		63302DBA1D8DC12F00F7BAA5 /* Authentication.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Authentication.storyboard; sourceTree = "<group>"; };
+		63302DBD1D8DC5CC00F7BAA5 /* signup-fb.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "signup-fb.png"; sourceTree = "<group>"; };
+		63302DBF1D8ECFF800F7BAA5 /* Step1SignUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Step1SignUpViewController.swift; sourceTree = "<group>"; };
+		63302DC11D8ED04000F7BAA5 /* Step2SetUserIDViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Step2SetUserIDViewController.swift; sourceTree = "<group>"; };
+		63302DC31D8ED0C100F7BAA5 /* Step3AskUserInfoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Step3AskUserInfoViewController.swift; sourceTree = "<group>"; };
+		63302DC51D8ED11B00F7BAA5 /* SetUserUnivViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SetUserUnivViewController.swift; sourceTree = "<group>"; };
+		63302DC71D8ED14700F7BAA5 /* SetUnivUserSkillsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SetUnivUserSkillsViewController.swift; sourceTree = "<group>"; };
 		633ABBEE1D6F1A2F004819D1 /* MatchyTest01.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MatchyTest01.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		633ABBF11D6F1A2F004819D1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		633ABBF31D6F1A2F004819D1 /* TopBranchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopBranchViewController.swift; sourceTree = "<group>"; };
@@ -156,13 +187,22 @@
 		63D26F9E1D81A0E900FEE093 /* dog.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = dog.jpeg; sourceTree = "<group>"; };
 		63D26F9F1D81A0E900FEE093 /* panda.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = panda.jpeg; sourceTree = "<group>"; };
 		63D26FA01D81A0E900FEE093 /* rat.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = rat.jpeg; sourceTree = "<group>"; };
-		63D26FA51D8233FE00FEE093 /* QuestionDetailForHighSchTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuestionDetailForHighSchTableViewCell.swift; sourceTree = "<group>"; };
-		63D26FA61D8233FE00FEE093 /* QuestionDetailForHighSchTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = QuestionDetailForHighSchTableViewCell.xib; sourceTree = "<group>"; };
+		63D26FA51D8233FE00FEE093 /* MyQuestionDetailTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyQuestionDetailTableViewCell.swift; sourceTree = "<group>"; };
+		63D26FA61D8233FE00FEE093 /* MyQuestionDetailTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MyQuestionDetailTableViewCell.xib; sourceTree = "<group>"; };
 		63D26FAB1D82641000FEE093 /* MyQuestionDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyQuestionDetailViewController.swift; sourceTree = "<group>"; };
 		63D26FAD1D827FAF00FEE093 /* AnswerForHighSchTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnswerForHighSchTableViewCell.swift; sourceTree = "<group>"; };
 		63D26FAE1D827FAF00FEE093 /* AnswerForHighSchTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AnswerForHighSchTableViewCell.xib; sourceTree = "<group>"; };
 		63D26FB11D8313C000FEE093 /* MyQuestionListTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MyQuestionListTableViewCell.xib; sourceTree = "<group>"; };
 		63D26FB61D843A9100FEE093 /* QuestionListTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = QuestionListTableViewCell.xib; sourceTree = "<group>"; };
+		63D26FBB1D84DBDC00FEE093 /* UnivMyPage.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = UnivMyPage.storyboard; sourceTree = "<group>"; };
+		63D26FBD1D84DC9200FEE093 /* UnivQuestionList.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = UnivQuestionList.storyboard; sourceTree = "<group>"; };
+		63D26FC31D84FA9000FEE093 /* MyQuestionList.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MyQuestionList.storyboard; sourceTree = "<group>"; };
+		63D26FC51D85022500FEE093 /* SearchList.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = SearchList.storyboard; sourceTree = "<group>"; };
+		63D26FC71D85050400FEE093 /* SearchListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchListViewController.swift; sourceTree = "<group>"; };
+		63D26FC91D854C9D00FEE093 /* SearchListSelectedTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchListSelectedTableViewCell.swift; sourceTree = "<group>"; };
+		63D26FCB1D854CC700FEE093 /* SearchListSelectedTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SearchListSelectedTableViewCell.xib; sourceTree = "<group>"; };
+		63D26FCD1D85540800FEE093 /* SearchTextTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchTextTableViewCell.swift; sourceTree = "<group>"; };
+		63D26FCE1D85540800FEE093 /* SearchTextTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SearchTextTableViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -190,6 +230,53 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		63193FD81D86930A00E3F475 /* SearchListView */ = {
+			isa = PBXGroup;
+			children = (
+				63193FDE1D869C2300E3F475 /* SearchModel.swift */,
+				63D26FC51D85022500FEE093 /* SearchList.storyboard */,
+				63D26FC71D85050400FEE093 /* SearchListViewController.swift */,
+				63D26FCD1D85540800FEE093 /* SearchTextTableViewCell.swift */,
+				63D26FCE1D85540800FEE093 /* SearchTextTableViewCell.xib */,
+				63D26FC91D854C9D00FEE093 /* SearchListSelectedTableViewCell.swift */,
+				63D26FCB1D854CC700FEE093 /* SearchListSelectedTableViewCell.xib */,
+				63193FD91D86935300E3F475 /* SearchSelectView */,
+			);
+			name = SearchListView;
+			sourceTree = "<group>";
+		};
+		63193FD91D86935300E3F475 /* SearchSelectView */ = {
+			isa = PBXGroup;
+			children = (
+				63193FD61D8653C000E3F475 /* SearchSelectViewController.swift */,
+				63193FDA1D8693BC00E3F475 /* SearchSelectTableViewCell.swift */,
+				63193FDB1D8693BC00E3F475 /* SearchSelectTableViewCell.xib */,
+			);
+			name = SearchSelectView;
+			sourceTree = "<group>";
+		};
+		63302DB91D8D952000F7BAA5 /* AuthenticationView */ = {
+			isa = PBXGroup;
+			children = (
+				63302DBA1D8DC12F00F7BAA5 /* Authentication.storyboard */,
+				63302DBF1D8ECFF800F7BAA5 /* Step1SignUpViewController.swift */,
+				63302DC11D8ED04000F7BAA5 /* Step2SetUserIDViewController.swift */,
+				63302DC31D8ED0C100F7BAA5 /* Step3AskUserInfoViewController.swift */,
+				63302DC51D8ED11B00F7BAA5 /* SetUserUnivViewController.swift */,
+				63302DC71D8ED14700F7BAA5 /* SetUnivUserSkillsViewController.swift */,
+			);
+			name = AuthenticationView;
+			sourceTree = "<group>";
+		};
+		63302DBC1D8DC59A00F7BAA5 /* otherSampleImages */ = {
+			isa = PBXGroup;
+			children = (
+				63302DBD1D8DC5CC00F7BAA5 /* signup-fb.png */,
+			);
+			name = otherSampleImages;
+			path = SamplePersonImage;
+			sourceTree = "<group>";
+		};
 		633ABBE51D6F1A2F004819D1 = {
 			isa = PBXGroup;
 			children = (
@@ -218,6 +305,7 @@
 				633ABBF31D6F1A2F004819D1 /* TopBranchViewController.swift */,
 				633ABBF51D6F1A2F004819D1 /* TopBranch.storyboard */,
 				6348816B1D7D787500038261 /* MatchyColor.swift */,
+				63302DB91D8D952000F7BAA5 /* AuthenticationView */,
 				6348816F1D7E887C00038261 /* UniversityView */,
 				63D26F801D80EB0000FEE093 /* HighSchoolView */,
 				63D26F7D1D80E7BB00FEE093 /* Extension */,
@@ -251,6 +339,7 @@
 			children = (
 				6348811E1D7A7FA800038261 /* SamplePersonImage */,
 				6348811B1D7A57B100038261 /* TabIcon */,
+				63302DBC1D8DC59A00F7BAA5 /* otherSampleImages */,
 			);
 			name = sampleImage;
 			sourceTree = "<group>";
@@ -301,8 +390,8 @@
 			children = (
 				634881491D7D427200038261 /* UnivTabBarController.swift */,
 				634881101D7A520600038261 /* UnivTab.storyboard */,
-				63D26F7F1D80EA9400FEE093 /* QuestionListView */,
-				63D26F7E1D80EA6E00FEE093 /* MyPageView */,
+				63D26F7F1D80EA9400FEE093 /* Tab-QuestionList */,
+				63D26F7E1D80EA6E00FEE093 /* Tab-MyPageView */,
 			);
 			name = UniversityView;
 			sourceTree = "<group>";
@@ -316,27 +405,27 @@
 			name = Extension;
 			sourceTree = "<group>";
 		};
-		63D26F7E1D80EA6E00FEE093 /* MyPageView */ = {
+		63D26F7E1D80EA6E00FEE093 /* Tab-MyPageView */ = {
 			isa = PBXGroup;
 			children = (
 				6348810E1D7A514900038261 /* UnivMyPageViewController.swift */,
 				6348812F1D7A834A00038261 /* UnivFollowerTableViewCell.swift */,
+				63D26FBB1D84DBDC00FEE093 /* UnivMyPage.storyboard */,
 			);
-			name = MyPageView;
+			name = "Tab-MyPageView";
 			sourceTree = "<group>";
 		};
-		63D26F7F1D80EA9400FEE093 /* QuestionListView */ = {
+		63D26F7F1D80EA9400FEE093 /* Tab-QuestionList */ = {
 			isa = PBXGroup;
 			children = (
 				634881701D7E9A6900038261 /* QuestionForUnivModel.swift */,
-				6348811C1D7A7E6600038261 /* QuestionListViewController.swift */,
-				634881311D7A992500038261 /* QuestionListTableViewCell.swift */,
-				63D26FB61D843A9100FEE093 /* QuestionListTableViewCell.xib */,
+				63D26FBD1D84DC9200FEE093 /* UnivQuestionList.storyboard */,
+				63D26FB81D84D59C00FEE093 /* QuestionListView */,
 				634881331D7AA88000038261 /* QuestionDetailViewController.swift */,
 				634881371D7AFB7C00038261 /* AnswerInputViewController.swift */,
 				634881671D7D5B0700038261 /* AnswerConfirmViewController.swift */,
 			);
-			name = QuestionListView;
+			name = "Tab-QuestionList";
 			sourceTree = "<group>";
 		};
 		63D26F801D80EB0000FEE093 /* HighSchoolView */ = {
@@ -345,8 +434,10 @@
 				63D26F8D1D819B0500FEE093 /* QuestionForHighSchModel.swift */,
 				63D26F8B1D819AD400FEE093 /* RespondentModel.swift */,
 				63D26F811D80EBB200FEE093 /* HighSchTab.storyboard */,
-				63D26FB41D842DC000FEE093 /* MyQuestionListView */,
-				63D26FB31D842D9600FEE093 /* MyQuestionDetailView */,
+				63D26FBF1D84DDD800FEE093 /* Tab-MyQuestionList */,
+				63D26FC01D84DE1900FEE093 /* Tab-PublicQuestionList */,
+				63D26FC11D84DE6B00FEE093 /* Tab-SearchList */,
+				63D26FC21D84DE8200FEE093 /* Tab-HighSchMyPage */,
 			);
 			name = HighSchoolView;
 			sourceTree = "<group>";
@@ -387,8 +478,8 @@
 			isa = PBXGroup;
 			children = (
 				63D26FAB1D82641000FEE093 /* MyQuestionDetailViewController.swift */,
-				63D26FA51D8233FE00FEE093 /* QuestionDetailForHighSchTableViewCell.swift */,
-				63D26FA61D8233FE00FEE093 /* QuestionDetailForHighSchTableViewCell.xib */,
+				63D26FA51D8233FE00FEE093 /* MyQuestionDetailTableViewCell.swift */,
+				63D26FA61D8233FE00FEE093 /* MyQuestionDetailTableViewCell.xib */,
 				63D26FAD1D827FAF00FEE093 /* AnswerForHighSchTableViewCell.swift */,
 				63D26FAE1D827FAF00FEE093 /* AnswerForHighSchTableViewCell.xib */,
 			);
@@ -398,11 +489,53 @@
 		63D26FB41D842DC000FEE093 /* MyQuestionListView */ = {
 			isa = PBXGroup;
 			children = (
+				63D26FC31D84FA9000FEE093 /* MyQuestionList.storyboard */,
 				63D26F851D81929200FEE093 /* MyQuestionListViewController.swift */,
 				63D26F871D81940200FEE093 /* MyQuestionListTableViewCell.swift */,
 				63D26FB11D8313C000FEE093 /* MyQuestionListTableViewCell.xib */,
+				63D26FB31D842D9600FEE093 /* MyQuestionDetailView */,
 			);
 			name = MyQuestionListView;
+			sourceTree = "<group>";
+		};
+		63D26FB81D84D59C00FEE093 /* QuestionListView */ = {
+			isa = PBXGroup;
+			children = (
+				6348811C1D7A7E6600038261 /* QuestionListViewController.swift */,
+				634881311D7A992500038261 /* QuestionListTableViewCell.swift */,
+				63D26FB61D843A9100FEE093 /* QuestionListTableViewCell.xib */,
+			);
+			name = QuestionListView;
+			sourceTree = "<group>";
+		};
+		63D26FBF1D84DDD800FEE093 /* Tab-MyQuestionList */ = {
+			isa = PBXGroup;
+			children = (
+				63D26FB41D842DC000FEE093 /* MyQuestionListView */,
+			);
+			name = "Tab-MyQuestionList";
+			sourceTree = "<group>";
+		};
+		63D26FC01D84DE1900FEE093 /* Tab-PublicQuestionList */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = "Tab-PublicQuestionList";
+			sourceTree = "<group>";
+		};
+		63D26FC11D84DE6B00FEE093 /* Tab-SearchList */ = {
+			isa = PBXGroup;
+			children = (
+				63193FD81D86930A00E3F475 /* SearchListView */,
+			);
+			name = "Tab-SearchList";
+			sourceTree = "<group>";
+		};
+		63D26FC21D84DE8200FEE093 /* Tab-HighSchMyPage */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = "Tab-HighSchMyPage";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -512,6 +645,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				63D26FC61D85022500FEE093 /* SearchList.storyboard in Resources */,
 				63D26F981D819F9800FEE093 /* hem.jpg in Resources */,
 				634881531D7D441700038261 /* .gitignore in Resources */,
 				6348812C1D7A7FA800038261 /* kobaton.jpg in Resources */,
@@ -520,14 +654,18 @@
 				63D26FA41D81A0E900FEE093 /* rat.jpeg in Resources */,
 				63D26F9A1D819F9800FEE093 /* shota.jpg in Resources */,
 				634881271D7A7FA800038261 /* aguri.jpg in Resources */,
+				63D26FD01D85540800FEE093 /* SearchTextTableViewCell.xib in Resources */,
 				6348812D1D7A7FA800038261 /* monkey01.png in Resources */,
 				63D26F961D819F9800FEE093 /* maeP.jpg in Resources */,
 				634881281D7A7FA800038261 /* daifuku1.jpg in Resources */,
-				63D26FA81D8233FE00FEE093 /* QuestionDetailForHighSchTableViewCell.xib in Resources */,
+				63D26FA81D8233FE00FEE093 /* MyQuestionDetailTableViewCell.xib in Resources */,
 				6348812A1D7A7FA800038261 /* horse01.png in Resources */,
 				63D26F951D819F9800FEE093 /* kasumin.jpg in Resources */,
 				634881561D7D441700038261 /* Default-568h@2x.png in Resources */,
 				63D26F821D80EBB200FEE093 /* HighSchTab.storyboard in Resources */,
+				63302DBE1D8DC5CC00F7BAA5 /* signup-fb.png in Resources */,
+				63D26FBE1D84DC9200FEE093 /* UnivQuestionList.storyboard in Resources */,
+				63D26FCC1D854CC700FEE093 /* SearchListSelectedTableViewCell.xib in Resources */,
 				63D26FA21D81A0E900FEE093 /* dog.jpeg in Resources */,
 				634881161D7A578800038261 /* tab_mypage_T.png in Resources */,
 				6348815C1D7D441700038261 /* Default-736h@3x.png in Resources */,
@@ -536,6 +674,7 @@
 				633ABBF71D6F1A2F004819D1 /* TopBranch.storyboard in Resources */,
 				634881191D7A578800038261 /* tab_newrequest_F.png in Resources */,
 				63D26FB21D8313C000FEE093 /* MyQuestionListTableViewCell.xib in Resources */,
+				63193FDD1D8693BC00E3F475 /* SearchSelectTableViewCell.xib in Resources */,
 				634881591D7D441700038261 /* Default-667h@2x.png in Resources */,
 				63D26FA11D81A0E900FEE093 /* penguin.jpeg in Resources */,
 				634881181D7A578800038261 /* tab_newrequest_T.png in Resources */,
@@ -543,7 +682,10 @@
 				6348812B1D7A7FA800038261 /* inocci.png in Resources */,
 				63D26FB71D843A9100FEE093 /* QuestionListTableViewCell.xib in Resources */,
 				634881111D7A520600038261 /* UnivTab.storyboard in Resources */,
+				63302DBB1D8DC12F00F7BAA5 /* Authentication.storyboard in Resources */,
+				63D26FC41D84FA9000FEE093 /* MyQuestionList.storyboard in Resources */,
 				63D26FA31D81A0E900FEE093 /* panda.jpeg in Resources */,
+				63D26FBC1D84DBDC00FEE093 /* UnivMyPage.storyboard in Resources */,
 				63D26FB01D827FAF00FEE093 /* AnswerForHighSchTableViewCell.xib in Resources */,
 				634881291D7A7FA800038261 /* honami1.jpg in Resources */,
 			);
@@ -578,24 +720,35 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				63302DC21D8ED04000F7BAA5 /* Step2SetUserIDViewController.swift in Sources */,
 				6348810F1D7A514900038261 /* UnivMyPageViewController.swift in Sources */,
 				634881381D7AFB7C00038261 /* AnswerInputViewController.swift in Sources */,
 				63D26F861D81929200FEE093 /* MyQuestionListViewController.swift in Sources */,
+				63193FDF1D869C2300E3F475 /* SearchModel.swift in Sources */,
+				63193FDC1D8693BC00E3F475 /* SearchSelectTableViewCell.swift in Sources */,
 				63D26FAC1D82641000FEE093 /* MyQuestionDetailViewController.swift in Sources */,
+				63302DC41D8ED0C100F7BAA5 /* Step3AskUserInfoViewController.swift in Sources */,
+				63D26FCA1D854C9E00FEE093 /* SearchListSelectedTableViewCell.swift in Sources */,
+				63D26FCF1D85540800FEE093 /* SearchTextTableViewCell.swift in Sources */,
 				6348815F1D7D441700038261 /* README.md in Sources */,
 				633ABBF41D6F1A2F004819D1 /* TopBranchViewController.swift in Sources */,
 				6348811D1D7A7E6600038261 /* QuestionListViewController.swift in Sources */,
 				634881341D7AA88000038261 /* QuestionDetailViewController.swift in Sources */,
 				63D26FAF1D827FAF00FEE093 /* AnswerForHighSchTableViewCell.swift in Sources */,
 				63D26F7C1D804DC500FEE093 /* NSTimeInterval+Extension.swift in Sources */,
+				63D26FC81D85050400FEE093 /* SearchListViewController.swift in Sources */,
 				634881621D7D441700038261 /* StoryboardHelper.swift in Sources */,
+				63302DC61D8ED11B00F7BAA5 /* SetUserUnivViewController.swift in Sources */,
+				63302DC01D8ECFF800F7BAA5 /* Step1SignUpViewController.swift in Sources */,
 				634881711D7E9A6900038261 /* QuestionForUnivModel.swift in Sources */,
 				634881681D7D5B0700038261 /* AnswerConfirmViewController.swift in Sources */,
 				634881321D7A992500038261 /* QuestionListTableViewCell.swift in Sources */,
 				633ABBF21D6F1A2F004819D1 /* AppDelegate.swift in Sources */,
-				63D26FA71D8233FE00FEE093 /* QuestionDetailForHighSchTableViewCell.swift in Sources */,
+				63D26FA71D8233FE00FEE093 /* MyQuestionDetailTableViewCell.swift in Sources */,
+				63193FD71D8653C000E3F475 /* SearchSelectViewController.swift in Sources */,
 				63D26F8C1D819AD400FEE093 /* RespondentModel.swift in Sources */,
 				63D26F891D81940200FEE093 /* MyQuestionListTableViewCell.swift in Sources */,
+				63302DC81D8ED14700F7BAA5 /* SetUnivUserSkillsViewController.swift in Sources */,
 				6348814A1D7D427200038261 /* UnivTabBarController.swift in Sources */,
 				6348816C1D7D787500038261 /* MatchyColor.swift in Sources */,
 				63D26F7A1D804B0000FEE093 /* String+Extension.swift in Sources */,

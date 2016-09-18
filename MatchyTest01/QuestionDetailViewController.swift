@@ -8,7 +8,7 @@
 
 import UIKit
 
-// 任意のquestionをtableviewから削除するのに使う
+// 1-1.任意のquestionをtableviewから削除するのに使う
 protocol RemoveSelectedQuestionDelegate: class {
     func removeSelectedQuestion(index: Int)
 }
@@ -32,6 +32,7 @@ class QuestionDetailViewController: UIViewController {
     let margin: CGFloat = 8.0 // パーツ間の余白
     var scrollHeight: CGFloat!
     
+    // 1-2.
     var removeSelectedQuestionDelegate: RemoveSelectedQuestionDelegate?
     
     override func viewDidLoad() {
@@ -125,7 +126,7 @@ class QuestionDetailViewController: UIViewController {
         let alert: UIAlertController = UIAlertController(title: "この質問の回答を拒否します", message: "この操作は取消できません", preferredStyle:  UIAlertControllerStyle.Alert)
         let okAction: UIAlertAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: {(
             action: UIAlertAction!) -> Void in
-            // cellからこの質問を削除
+            // 1-3.cellからこの質問を削除
             self.removeSelectedQuestionDelegate?.removeSelectedQuestion(self.selectedIndex)
             
             // tableViewに戻る

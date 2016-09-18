@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="pd1-AS-8Mn">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <scenes>
+        <!--自分の質問-->
+        <scene sceneID="51a-Mx-1gB">
+            <objects>
+                <viewController id="IAx-ON-gkY" customClass="MyQuestionListViewController" customModule="MatchyTest01" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="3hB-3m-mqv"/>
+                        <viewControllerLayoutGuide type="bottom" id="ybb-P8-eRV"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="JT7-q8-sKF">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="141" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="4eN-v9-6hT">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="4eN-v9-6hT" firstAttribute="top" secondItem="JT7-q8-sKF" secondAttribute="top" id="3dQ-1a-lHY"/>
+                            <constraint firstItem="4eN-v9-6hT" firstAttribute="leading" secondItem="JT7-q8-sKF" secondAttribute="leading" id="OfA-Xk-WlJ"/>
+                            <constraint firstItem="4eN-v9-6hT" firstAttribute="bottom" secondItem="JT7-q8-sKF" secondAttribute="bottomMargin" id="VXc-V7-wWd"/>
+                            <constraint firstAttribute="trailing" secondItem="4eN-v9-6hT" secondAttribute="trailing" id="xUn-2f-mSO"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="自分の質問" id="R35-cu-aYJ"/>
+                    <connections>
+                        <outlet property="myQuestionListTableView" destination="4eN-v9-6hT" id="GH2-te-VKd"/>
+                        <segue destination="kea-Bn-v7v" kind="push" identifier="toQuestionDetailVC" id="HJT-CY-sES"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="z5I-No-oq3" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="964" y="-1276"/>
+        </scene>
+        <!--質問と回答-->
+        <scene sceneID="8cH-ic-5Jn">
+            <objects>
+                <viewController id="kea-Bn-v7v" customClass="MyQuestionDetailViewController" customModule="MatchyTest01" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="uOL-pF-Fgr"/>
+                        <viewControllerLayoutGuide type="bottom" id="Mmk-12-3oN"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="YU9-Ic-Wgh">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="300" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="76R-DQ-vDG">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="76R-DQ-vDG" firstAttribute="leading" secondItem="YU9-Ic-Wgh" secondAttribute="leading" id="OWz-pt-Z0e"/>
+                            <constraint firstAttribute="trailing" secondItem="76R-DQ-vDG" secondAttribute="trailing" id="Ujc-dP-ELI"/>
+                            <constraint firstAttribute="bottom" secondItem="76R-DQ-vDG" secondAttribute="bottom" id="lNd-K0-WFR"/>
+                            <constraint firstItem="76R-DQ-vDG" firstAttribute="top" secondItem="YU9-Ic-Wgh" secondAttribute="top" id="sE4-bQ-iq3"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="質問と回答" id="eii-is-m7v"/>
+                    <connections>
+                        <outlet property="questionDetailTableView" destination="76R-DQ-vDG" id="FR9-iR-ZYt"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="iFG-dk-53M" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1412" y="-1276"/>
+        </scene>
+        <!--自分の投稿-->
+        <scene sceneID="v5b-P5-Ivl">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="pd1-AS-8Mn" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="自分の投稿" id="dw0-Tj-asO"/>
+                    <toolbarItems/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="FeZ-vK-EGe">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="IAx-ON-gkY" kind="relationship" relationship="rootViewController" id="2Up-US-jHL"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="MSf-cZ-dRq" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="432" y="-1276"/>
+        </scene>
+    </scenes>
+</document>

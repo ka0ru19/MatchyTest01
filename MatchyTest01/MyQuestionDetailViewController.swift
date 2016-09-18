@@ -18,11 +18,12 @@ class MyQuestionDetailViewController: UIViewController {
         super.viewDidLoad()
         questionDetailTableView.delegate = self
         questionDetailTableView.dataSource = self
-        questionDetailTableView.registerNib(UINib(nibName: "QuestionDetailForHighSchTableViewCell", bundle: nil), forCellReuseIdentifier: "QuestionDetailCell")
+        questionDetailTableView.registerNib(UINib(nibName: "MyQuestionDetailTableViewCell", bundle: nil), forCellReuseIdentifier: "MyQuestionDetailCell")
         questionDetailTableView.registerNib(UINib(nibName: "AnswerForHighSchTableViewCell", bundle: nil), forCellReuseIdentifier: "AnswerCell")
         
         questionDetailTableView.estimatedRowHeight = 2000 //CGFloat.max
         questionDetailTableView.rowHeight = UITableViewAutomaticDimension
+        questionDetailTableView.allowsSelection = false
         
     }
     
@@ -44,7 +45,7 @@ extension MyQuestionDetailViewController: UITableViewDelegate, UITableViewDataSo
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         if indexPath.row == 0 {
-            let cell = tableView.dequeueReusableCellWithIdentifier("QuestionDetailCell", forIndexPath: indexPath) as! QuestionDetailForHighSchTableViewCell
+            let cell = tableView.dequeueReusableCellWithIdentifier("MyQuestionDetailCell", forIndexPath: indexPath) as! MyQuestionDetailTableViewCell
             cell.setQuestionCell(selectedQuestion)
 //            cell.setQuestionCellHeight(&selectedQuestion)
 //            print("このcellHeightは\(selectedQuestion.questionDetailCellHeight)")

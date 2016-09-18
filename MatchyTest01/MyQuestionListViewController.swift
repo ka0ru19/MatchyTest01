@@ -135,8 +135,6 @@ extension MyQuestionListViewController {
             
             sampleQuestionList.append(question)
         }
-        
-        print(sampleQuestionList)
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {

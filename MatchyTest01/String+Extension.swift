@@ -18,11 +18,22 @@ extension String {
         return deadlineDate!.timeIntervalSinceNow
     }
     
+    // "2016/09/12 5:32" -> 2016/09/12 5:32 as NSDate
     func changeDateStringToNSDate() -> NSDate {
         let dateFormatter = NSDateFormatter()
         dateFormatter.locale = NSLocale(localeIdentifier: "ja_JP")
         dateFormatter.dateFormat = "yyyy/MM/dd' 'HH:mm"
         return dateFormatter.dateFromString(self)!
+    }
+    
+    // "2016/09/12 5:32" -> "2016/09/12"
+    func changeDateStringToYMDString() -> String {
+        let dateFormatter = NSDateFormatter()
+        dateFormatter.locale = NSLocale(localeIdentifier: "ja_JP")
+        dateFormatter.dateFormat = "yyyy/MM/dd' 'HH:mm"
+        let date = dateFormatter.dateFromString(self)!
+        dateFormatter.dateFormat = "yyyy/MM/dd"
+        return dateFormatter.stringFromDate(date)
     }
     
 }

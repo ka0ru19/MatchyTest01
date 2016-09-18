@@ -8,7 +8,7 @@
 
 import UIKit
 
-class QuestionDetailForHighSchTableViewCell: UITableViewCell {
+class MyQuestionDetailTableViewCell: UITableViewCell {
 
     @IBOutlet weak var questionTitleLabel: UILabel!
     @IBOutlet weak var questionPostDateLabel: UILabel!

@@ -49,15 +49,15 @@ class QuestionListViewController: UIViewController {
                                        "2016/09/03 2:09"
     ]
     
-    let answerDeadlineArray = ["2016/9/17 20:11",
-                               "2016/9/16 20:13",
-                               "2016/9/16 23:41",
-                               "2016/9/15 20:01",
-                               "2016/9/15 12:51",
-                               "2016/9/15 12:19",
-                               "2016/9/14 20:11",
-                               "2016/9/4 20:14",
-                               "2016/9/3 20:21"] // 日本時間
+    let answerDeadlineArray = ["2016/9/27 20:11",
+                               "2016/9/26 20:13",
+                               "2016/9/26 23:41",
+                               "2016/9/25 20:01",
+                               "2016/9/25 12:51",
+                               "2016/9/25 12:19",
+                               "2016/9/24 20:11",
+                               "2016/9/14 20:14",
+                               "2016/9/13 20:21"] // 日本時間
     
     let isAsweredArray = [true,false,true,true,false,true,false,false,true]
     
@@ -103,7 +103,7 @@ class QuestionListViewController: UIViewController {
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "toQuestionDetailVC" {
             let nextVC = segue.destinationViewController as! QuestionDetailViewController
-            // 任意のquestionをtableviewから削除するのに使う
+            // 2-1.任意のquestionをtableviewから削除するのに使う
             nextVC.removeSelectedQuestionDelegate = self
             nextVC.selectedIndex = self.selectedIndex
             nextVC.selectedQuestion = questionList[self.selectedIndex]
@@ -116,7 +116,7 @@ class QuestionListViewController: UIViewController {
     
 }
 
-// 任意のquestionをtableviewから削除するのに使う
+// 2-2.任意のquestionをtableviewから削除するのに使う
 extension QuestionListViewController: RemoveSelectedQuestionDelegate /*onTappedAnswerRefuseOK*/ {
     func removeSelectedQuestion(index: Int) {
         questionList.removeAtIndex(index)

@@ -31,6 +31,13 @@
                                     <segue destination="HuD-yL-7Rr" kind="modal" id="pYL-9l-kMX"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1W7-c2-5hb">
+                                <rect key="frame" x="110" y="170" width="101" height="30"/>
+                                <state key="normal" title="Authentication"/>
+                                <connections>
+                                    <segue destination="lAZ-iG-BgB" kind="modal" id="O3L-aa-bwl"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -38,6 +45,14 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VHO-q9-TJ8" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="276" y="556"/>
+        </scene>
+        <!--Authentication-->
+        <scene sceneID="aYd-qE-kJ4">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Authentication" id="lAZ-iG-BgB" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="vHv-OS-0YR" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="677.5" y="477"/>
         </scene>
         <!--UnivTab-->
         <scene sceneID="NJI-IN-SHT">
